@@ -30,4 +30,11 @@ Popis:
 Informace: <br />
 V rámci předmětu IAL studenti řeší týmový projekt.
 Studenti, kteří mají zapsaný i předmět IFJ, řeší společný projekt do těchto dvou předmětů (na tuto variantu jsou automaticky přihlášeni všichni studenti).
-Ostatní studenti řeší tzv. náhradní projekt z oblasti grafových algoritmů. Na jednotlivé varianty náhradního projektu je potřeba se přihlásit prostřednictvím IS VUT. Po rozkliknutí obsahuje každá varianta dodatečné podrobnosti k zadání projektu. 
+Ostatní studenti řeší tzv. náhradní projekt z oblasti grafových algoritmů. Na jednotlivé varianty náhradního projektu je potřeba se přihlásit prostřednictvím IS VUT. Po rozkliknutí obsahuje každá varianta dodatečné podrobnosti k zadání projektu.
+
+## Dokumentácia
+Pre vygenerovanie dokumentácie stačí použiť priložený Makefile.
+Po spustení príkazového riadku sa presunťe do tohoto adresára a stačí zadať nasledovný príkaz:
+```makefile
+make doc
+```
