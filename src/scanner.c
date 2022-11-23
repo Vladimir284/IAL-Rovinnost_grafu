@@ -20,12 +20,13 @@
  */
 int Symbol_Analyze(char c, int stav) {
     //kontrola vstupu
+    /*
     if(&stav == NULL){
         fprintf(stderr, "CHYBA volání Symbol_Analyze stav je NULL\n");
         return -1;
     }
 
-    else if (stav > 4 || stav < 0)
+    else*/ if (stav > 4 || stav < 0)
     {
         fprintf(stderr, "CHYBA volání Symbol_Analyze neexistující stav: %d\n",stav);
         return -1;
@@ -79,8 +80,7 @@ int Symbol_Analyze(char c, int stav) {
         fprintf(stderr, "CHYBA Soubor obsahuje neznámý znak: \"%c\"\n",c);
         return -1;
     }
-    
-
+    return -1;
 }
 
 
@@ -98,7 +98,7 @@ Vector *Scanner_Main(const char *file_name)
     */
     int stav = 1;
     int stav_temp;
-    char* id;
+    char* id = "";
     int id_temp_int;
     Node *node;
     Vector *graf = Graph_Init();
@@ -127,7 +127,7 @@ Vector *Scanner_Main(const char *file_name)
         {
             id_temp_int = atoi(id);
             node = Node_Init(id_temp_int);
-            //fprintf(stdout,"new_node=%d\n",id_temp_int);
+            fprintf(stdout,"new_node=%d\n",id_temp_int);
 
             if (!Graph_Add_Node(graf, node)){
                 fprintf(stderr, "CHYBA volání Graph_Add_Node ve Scanneru\n");
@@ -139,13 +139,13 @@ Vector *Scanner_Main(const char *file_name)
         else if (stav == 2)
         {
             strncat(id, &c, 1);
-            //fprintf(stdout,"new_node_id->%s\n",id);
+            fprintf(stdout,"new_node_id->%s\n",id);
         }
         //nová hrana uzlu
         else if (stav == 3)
         {
             id_temp_int = atoi(id);
-            //fprintf(stdout,"new_edge->%d\n",id_temp_int);
+            fprintf(stdout,"new_edge->%d\n",id_temp_int);
             if (!Node_Add_Edge(node, &id_temp_int)){
                 fprintf(stderr, "CHYBA volání Node_Add_Edge ve Scanneru\n");
                 fclose(file_pointer);
@@ -156,7 +156,7 @@ Vector *Scanner_Main(const char *file_name)
         else if (stav == 4)
         {
             strncat(id, &c, 1);
-            //fprintf(stdout,"new_edge_id->%s\n",id);
+            fprintf(stdout,"new_edge_id->%s\n",id);
         }
         
         
@@ -166,5 +166,13 @@ Vector *Scanner_Main(const char *file_name)
     fclose(file_pointer);
     return graf;
  }
+
+ int main()
+ {
+    Vector *graf = Scanner_Main("./text.txt");
+    (void)graf;
+    return 0;
+ }
+ 
 
 
