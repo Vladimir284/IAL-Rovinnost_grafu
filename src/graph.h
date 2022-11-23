@@ -23,7 +23,7 @@ Vector *Graph_Init();
  * Destroy graph
  * @param ptr Pointer on dtor function
  */
-void Graph_Dtor(void *ptr);
+void Graph_Destroy(void *ptr);
 
 /**
  * Add node to graph
@@ -63,5 +63,11 @@ bool Graph_Remove_Node(Vector *graph, int index);
  * @return True upon success, otherwise false
  */
 bool Graph_Clear(Vector *graph);
+
+/**
+ * Destroy graph
+ * @param ptr pointer on allocated graph
+ */
+void Graph_Destroy(void *ptr);
 
 #endif //IAL22_GRAPH_H

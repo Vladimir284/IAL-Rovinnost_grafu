@@ -20,7 +20,7 @@ struct Node_t {
 
 Node *Node_Init(int id) {
 
-    Node *pNode = (Node *) malloc(sizeof(Node));
+    Node *pNode = (Node*) malloc(sizeof(Node));
     if (pNode == NULL) {
         ERROR("Allocation failed");
         return NULL;
@@ -29,7 +29,7 @@ Node *Node_Init(int id) {
     pNode->id = id;
     pNode->color = white;
     pNode->active = 0;
-    pNode->edges = Vector_Init(free);
+    pNode->edges = Vector_Init(NULL);
     return pNode;
 }
 
@@ -69,10 +69,9 @@ int *Node_Get_Edge(Node *node, int *edge){
 
 bool Node_Search_Edge(Node *node, int *edge) {
 
-    for (int i = 0; i < Vector_Size(node->edges); ++i) {
+    for (int i = 0; i < Vector_Size(node->edges); ++i)
         if ((int *) Vector_GetElement(Node_Get_Edges(node), i) == edge)
             return true;
-    }
 
     return false;
 }
@@ -81,10 +80,11 @@ bool Node_Add_Edge(Node *node, int *edge) {
     return Vector_PushBack(node->edges, edge);
 }
 
+// TODO Edge can be pointer to const ? Ask Rasto
 bool Node_Delete_Edge(Node *node, int *edge) {
 
     for (int i = 0; i < Vector_Size(node->edges); ++i)
-        if (Vector_GetElement(Node_Get_Edges(node), i) == edge)
+        if ((int*)Vector_GetElement(Node_Get_Edges(node), i) == edge)
             return Vector_RemoveElement(Node_Get_Edges(node), i);
 
     return false;
@@ -94,7 +94,7 @@ bool Node_Delete_All_Edges(Node *node) {
     return Vector_Clear(Node_Get_Edges(node));
 }
 
-void Node_Dtor(void* ptr) {
+void Node_Destroy(void* ptr) {
     Node *node = (Node*)ptr;
     Vector_Destroy(node->edges);
 }

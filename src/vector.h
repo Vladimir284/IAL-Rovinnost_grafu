@@ -17,7 +17,7 @@
 #include <stdio.h>
 
 #define ERROR(ARG) fprintf(stderr, "ERROR %s\n",ARG)
-#define WARNING(ARG) fprintf(stderr, "WARNING %s\n",ARG)
+#define WARNING(ARG) //fprintf(stderr, "WARNING %s\n",ARG) Silent for now, not needed TODO Ask Rasto
 
 // Typedef of vector is here so only functions Get can acces values stored in vector
 typedef struct Vector_t Vector;

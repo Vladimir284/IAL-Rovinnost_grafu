@@ -6,11 +6,11 @@
 
 /**
  * @file graph.c
- * @brief This file implements  interface functions to work with graph
+ * @brief This file implements  interface functions working with graph
  */
 
 Vector *Graph_Init() {
-    Vector *graph = Vector_Init(NULL);
+    Vector *graph = Vector_Init(Node_Destroy);
     return graph;
 }
 
@@ -39,7 +39,7 @@ bool Graph_Clear(Vector *graph){
     return Vector_Clear(graph);
 }
 
-void Graph_Dtor(void *ptr) {
+void Graph_Destroy(void *ptr) {
     Vector *vector = (Vector *) ptr;
     Vector_Destroy(vector);
 }
