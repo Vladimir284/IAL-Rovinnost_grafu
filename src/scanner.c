@@ -1,4 +1,4 @@
-#include "graph.h"
+//#include "graph.h"
 
 #include "scanner.h"
 
@@ -10,13 +10,14 @@
  * @param stav právě probýhaný znak
  * @return int //stav
  *          -1 -> CHYBA 
- *          0 -> špatný znak (ostatní nebílé znaky)
+ *          0 -> bílý znak (ostatní nebílé znaky)
  * 
- *          1 -> nový uzel (znak ";")
+ *          1 -> nový uzel //(znak ":")
  *          2 -> zápis id uzlu (znak "[0-9]")
  * 
  *          3 -> nová hrana (znak "-")
  *          4 -> zápis id hrany (znak "[0-9]")
+ *          5 -> zápis id hrany (znak ";")
  */
 int Symbol_Analyze(char c, int stav) {
     //kontrola vstupu
@@ -26,7 +27,7 @@ int Symbol_Analyze(char c, int stav) {
         return -1;
     }
 
-    else*/ if (stav > 4 || stav < 0)
+    else*/ if (stav > 5 || stav < 0)
     {
         fprintf(stderr, "CHYBA volání Symbol_Analyze neexistující stav: %d\n",stav);
         return -1;
@@ -35,13 +36,26 @@ int Symbol_Analyze(char c, int stav) {
     //znak je středník ";"
     else if (c == ';')
     {
+        return 5;
+    }
+    //znak je dvojtečka ":"
+    else if ((c == ':') && (stav == 2))
+    {
         return 1;
     }
     
+    
     //znak je pomlčka "-"
-    else if (c == '-')
+    else if (c == '-' )
     {
-        return 3;
+        if (stav==4)
+        {
+            return 3;
+        }
+        if (stav==1)
+        {
+            return 0;
+        }
     }
 
     //znak je číslo
@@ -58,14 +72,14 @@ int Symbol_Analyze(char c, int stav) {
         c == '9' )
     {
         //id uzlu
-        if (stav == 1 || stav == 2)
+        if (stav == 5 || stav == 2)
         {
             return 2;
         }
         //id hrany
-        if (stav == 3 || stav == 4)
+        if (stav == 1 || stav == 4 || stav == 3)
         {
-            return 3;
+            return 4;
         }
     }
 
@@ -83,8 +97,8 @@ int Symbol_Analyze(char c, int stav) {
     return -1;
 }
 
-
-Vector *Scanner_Main(const char *file_name)
+//Vector *Scanner_Main(const char *file_name)
+char *Scanner_Main(const char *file_name)
  {
     //inicializace proměnných
     char c;
@@ -96,12 +110,20 @@ Vector *Scanner_Main(const char *file_name)
     * 3 -> nová hrana (znak "-")
     * 4 -> zápis id hrany (znak "[0-9]")
     */
-    int stav = 1;
+    int stav = 5;
     int stav_temp;
-    char* id = "";
+
+    //buffer pro zapsání id
+    char buff[20];
+    memset(buff,0,strlen(buff));
+    //ukazatel do bufferu
+    char* id = buff;
+    buff[0]='\0';
+
     int id_temp_int;
-    Node *node;
-    Vector *graf = Graph_Init();
+    //Node *node;
+    //Vector *graf = Graph_Init();
+    char *graf="";
     FILE *file_pointer = fopen(file_name, "r");
 
 
@@ -109,54 +131,102 @@ Vector *Scanner_Main(const char *file_name)
     //procházení souboru
     while ((c = fgetc(file_pointer)) != EOF)
     {
+        //fprintf(stdout,"c=|%c|\n",c);
+        //fprintf(stdout,"stav=|%d|\n",stav);
+
         //určíme stav podle znaku 
         stav_temp = Symbol_Analyze(c, stav);
-        //nebílý znak
-        if (stav == 0)
+        fprintf(stdout,"stav_temp=%d\n",stav_temp);
+        //bílý znak
+        if (stav_temp == 0)
         {
-            stav = stav_temp;
+            continue;
+        }
+
+        //nebílý znak
+        else if(stav_temp != 0)
+        {
+            stav=stav_temp;
         }
         //neznámí znak nebo stav
-        else if (stav < 0)
+        if (stav < 0)
         {
+            fprintf(stdout,"error %d<0\n",stav);
             fclose(file_pointer);
             return NULL;
         }
         //nový uzel grafu
         else if (stav == 1)
         {
-            id_temp_int = atoi(id);
-            node = Node_Init(id_temp_int);
-            fprintf(stdout,"new_node=%d\n",id_temp_int);
+            //fprintf(stdout,"stav==%d<0\n",stav);
+            //const char * id_temp_char = buff;
 
+            id_temp_int = atoi(buff);
+
+            //fprintf(stdout,"stav==%d<0\n",stav);
+
+            //node = Node_Init(id_temp_int);
+            fprintf(stdout,"new_node=%d\n",id_temp_int);
+            /*
             if (!Graph_Add_Node(graf, node)){
                 fprintf(stderr, "CHYBA volání Graph_Add_Node ve Scanneru\n");
                 fclose(file_pointer);
                 return NULL;
-            }
+            }*/
+
+            //vyprázdnění bufferu
+            memset(buff,0,strlen(buff));
+            id=buff;
+            buff[0]='\0';
         }
         //id uzlu
         else if (stav == 2)
         {
-            strncat(id, &c, 1);
-            fprintf(stdout,"new_node_id->%s\n",id);
+            //fprintf(stdout,"c->%c\n",c);
+            //fprintf(stdout,"id->%s\n",id);
+            //strncat(id, &c, 1);
+            *id++ = c;
+            fprintf(stdout,"new_node_id=%s\n",buff);
+            //fprintf(stdout,"hej hej\n");
+            //fprintf(stdout,"id->%s\n",id);
+            //fprintf(stdout,"buffer->%s\n",buff);
         }
         //nová hrana uzlu
         else if (stav == 3)
         {
-            id_temp_int = atoi(id);
+            id_temp_int = atoi(buff);
             fprintf(stdout,"new_edge->%d\n",id_temp_int);
-            if (!Node_Add_Edge(node, &id_temp_int)){
+            /*if (!Node_Add_Edge(node, &id_temp_int)){
                 fprintf(stderr, "CHYBA volání Node_Add_Edge ve Scanneru\n");
                 fclose(file_pointer);
                 return NULL;
-            }
+            }*/
+
+            //vyprázdnění bufferu
+            memset(buff,0,strlen(buff));
+            id=buff;
+            buff[0]='\0';
         }
         //id hrany
         else if (stav == 4)
         {
-            strncat(id, &c, 1);
-            fprintf(stdout,"new_edge_id->%s\n",id);
+            *id++ = c;
+            fprintf(stdout,"new_edge_id->%s\n",buff);
+        }
+        //konec uzlu
+        else if (stav == 5)
+        {
+            id_temp_int = atoi(buff);
+            fprintf(stdout,"new_edge->%d\n",id_temp_int);
+            /*if (!Node_Add_Edge(node, &id_temp_int)){
+                fprintf(stderr, "CHYBA volání Node_Add_Edge ve Scanneru\n");
+                fclose(file_pointer);
+                return NULL;
+            }*/
+            fprintf(stdout,"new_edge_id->%s\n",buff);
+            memset(buff,0,strlen(buff));
+            id=buff;
+            buff[0]='\0';
         }
         
         
@@ -169,8 +239,9 @@ Vector *Scanner_Main(const char *file_name)
 
  int main()
  {
-    Vector *graf = Scanner_Main("./text.txt");
+    char *graf = Scanner_Main("./text.txt");
     (void)graf;
+    fprintf(stdout,"--%s\n",graf);
     return 0;
  }
  
