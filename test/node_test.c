@@ -15,10 +15,6 @@ const int additional_edges_count = 10;
 /// Id of node
 const int node_id = 0;
 
-///Huge data
-const int huge_edges[] = {};
-
-
 /**
  * Help function, add base data into node
  * @param node Pointer on node
@@ -203,4 +199,5 @@ void Test_Node(){
     Test_Node_Get_Edge_On_Index();
     Test_Node_Empty_Get_Edge();
     Test_Clear_Additional_Node();
+
 }
