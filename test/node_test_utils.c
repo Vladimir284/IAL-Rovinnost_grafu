@@ -22,7 +22,7 @@ void Node_Print_Edges(Node *node) {
 }
 
 void Node_Print_Flags(Node *node) {
-    printf("Node activity: %d \n", Node_Get_Activity(node));
+    printf("Node activity: %d\n", Node_Get_Activity(node));
     printf("Node color: %s\n", ((Node_Get_Color(node) ==  0) ? "White" : "Grey"));
 }
 

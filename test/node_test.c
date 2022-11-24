@@ -133,7 +133,7 @@ TEST(Test_Node_Search_Edge_Additional_Edges,"Search every second edge in node wi
         Node_Print_Search_Edge(test_node, (int*) &additional_edges[i]);
 ENDTEST
 
-TEST(Test_Node_Search_Empty_Node_Additional_Edges,"Search every second edge in node with base and additional edges" )
+TEST(Test_Node_Search_Empty_Node_Additional_Edges,"Search every second edge in empty node" )
     Node_Print(test_node);
     printf("\n");
     for (int i = 1; i < base_edges_count; i+=2)
