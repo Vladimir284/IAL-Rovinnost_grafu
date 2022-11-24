@@ -166,14 +166,14 @@ char *Scanner_Main(const char *file_name)
             //fprintf(stdout,"stav==%d<0\n",stav);
 
             //node = Node_Init(id_temp_int);
-            fprintf(stdout,"new_node=%d\n",id_temp_int);
+            fprintf(stdout,"Graph_Add_Node=%d\n",id_temp_int);
             /*
             if (!Graph_Add_Node(graf, node)){
                 fprintf(stderr, "CHYBA volání Graph_Add_Node ve Scanneru\n");
                 fclose(file_pointer);
                 return NULL;
             }*/
-
+            fprintf(stdout,"new_node->%s\n",buff);
             //vyprázdnění bufferu
             memset(buff,0,strlen(buff));
             id=buff;
@@ -195,13 +195,13 @@ char *Scanner_Main(const char *file_name)
         else if (stav == 3)
         {
             id_temp_int = atoi(buff);
-            fprintf(stdout,"new_edge->%d\n",id_temp_int);
+            fprintf(stdout,"Node_Add_Edge->%d\n",id_temp_int);
             /*if (!Node_Add_Edge(node, &id_temp_int)){
                 fprintf(stderr, "CHYBA volání Node_Add_Edge ve Scanneru\n");
                 fclose(file_pointer);
                 return NULL;
             }*/
-
+            fprintf(stdout,"new_edge->%s\n",buff);
             //vyprázdnění bufferu
             memset(buff,0,strlen(buff));
             id=buff;
@@ -217,13 +217,14 @@ char *Scanner_Main(const char *file_name)
         else if (stav == 5)
         {
             id_temp_int = atoi(buff);
-            fprintf(stdout,"new_edge->%d\n",id_temp_int);
+            fprintf(stdout,"Node_Add_Edge->%d\n",id_temp_int);
             /*if (!Node_Add_Edge(node, &id_temp_int)){
                 fprintf(stderr, "CHYBA volání Node_Add_Edge ve Scanneru\n");
                 fclose(file_pointer);
                 return NULL;
             }*/
-            fprintf(stdout,"new_edge_id->%s\n",buff);
+            fprintf(stdout,"new_edge->%s\n",buff);
+            //vyprázdnění bufferu
             memset(buff,0,strlen(buff));
             id=buff;
             buff[0]='\0';
