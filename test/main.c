@@ -8,7 +8,7 @@
 
 int main(int argc, char *argv[]) {
 
-    if ((argc > 2) || (argc < 1)) {
+    if ((argc > 2) || (argc <= 1)) {
         ERROR("Wrong amount of arguments");
         return 1;
     }

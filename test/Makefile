@@ -10,8 +10,10 @@ BIN_GRAPH=ial22testGraph
 .PHONY: test clean
 
 test_node:
-	$(CC) -c $(SRC_NODE) -o $(OBJ_NODE)
-	$(CC) $(OBJ_NODE) $(BIN_NODE)
+	# $(CC) -c $(SRC_NODE) -o $(OBJ_NODE)
+	# $(CC) $(OBJ_NODE) $(BIN_NODE)
 
 clean:
 	rm -f test
+
+

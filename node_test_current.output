@@ -1,0 +1,64 @@
+2
+
+
+           Node tests
+----------------------------------
+
+
+[Test_Node_Init] Initialise node
+Node id: 0
+Node edges size: 0
+Node Edges : [  ]
+Node activity: 0 
+Node color: White
+
+[Test_Node_Set_Activity_Inactive] Set activity to inactive
+Node id: 0
+Node edges size: 0
+Node Edges : [  ]
+Node activity: 0 
+Node color: White
+
+[Test_Node_Set_Activity_Active] Set activity to active
+Node id: 0
+Node edges size: 0
+Node Edges : [  ]
+Node activity: 1 
+Node color: White
+
+[Test_Node_Add_Base_Edges] Add edges into node
+1 2 3 4 5 
+Node id: 0
+Node edges size: 5
+Node Edges : [ 1, 2, 3, 4, 5 ]
+Node activity: 0 
+Node color: White
+
+[Test_Node_Remove_Edges_Last] Remove last 3 edges from node
+1 2 3 4 5 
+
+Node id: 0
+Node edges size: 5
+Node Edges : [ 1, 2, 3, 4, 5 ]
+Node activity: 0 
+Node color: White
+Node id: 0
+Node edges size: 2
+Node Edges : [ 1, 2 ]
+Node activity: 0 
+Node color: White
+
+[Test_Node_Remove_Edges_First] Remove first 3 edges from node
+1 2 3 4 5 
+Node id: 0
+Node edges size: 5
+Node Edges : [ 1, 2, 3, 4, 5 ]
+Node activity: 0 
+Node color: White
+
+Node id: 0
+Node edges size: 2
+Node Edges : [ 4, 5 ]
+Node activity: 0 
+Node color: White
+
