@@ -10,7 +10,8 @@
 #define TEST(NAME, DESCRIPTION)                                                \
   void NAME() {                                                                \
     printf("[%s] %s\n", #NAME, DESCRIPTION);                                   \
-    Node *test_node = Node_Init((int) node_id);
+    Node *test_node = Node_Init((int) node_id);                                \
+    printf("\n");
 
 #define ENDTEST                                                                \
   printf("\n");                                                                \

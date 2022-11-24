@@ -66,10 +66,10 @@ int Node_Get_Id(Node *node);
 /**
  * Get edge of node
  * @param node Pointer on allocated node
- * @param edge Pointer on edge to be found
+ * @param index Index of edge to be found
  * @return Pointer on allocated edge, Null if edge does not exist
  */
-int *Node_Get_Edge(Node *node, int *edge);
+int *Node_Get_Edge(Node *node, int index);
 
 /**
  * Get edges of node

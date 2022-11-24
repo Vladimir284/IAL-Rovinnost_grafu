@@ -58,13 +58,8 @@ Vector *Node_Get_Edges(Node *node) {
     return node->edges;
 }
 
-int *Node_Get_Edge(Node *node, int *edge){
-
-    for (int i = 0; i < Vector_Size(Node_Get_Edges(node)); ++i)
-        if ((int*)Vector_GetElement(Node_Get_Edges(node),i) == edge)
-            return (int*)Vector_GetElement(Node_Get_Edges(node),i);
-
-    return NULL;
+int *Node_Get_Edge(Node *node, int index){
+    return Vector_GetElement(Node_Get_Edges(node),index);
 }
 
 bool Node_Search_Edge(Node *node, int *edge) {
