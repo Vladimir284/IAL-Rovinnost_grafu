@@ -7,11 +7,10 @@
 #include <string.h>
 
 /**
- * @brief reads file on adress file_name and returns it as graph
+ * @brief reads file from stdin and places all the data into graf
  * 
- * @param file_name adress of read file
- * @return Vector*  the graph on output
+ * @param graf pointer to graph structure where data will be placed
  */
-Vector *Scanner_Main(const char *file_name);
+void Scanner_Main(Vector *graf);
 
 #endif //IAL22_SCANNER_H
