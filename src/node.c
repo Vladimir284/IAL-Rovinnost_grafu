@@ -23,7 +23,6 @@ Node *Node_Init(int id) {
     Node *pNode = (Node*) malloc(sizeof(Node));
     if (pNode == NULL) {
         ERROR("Allocation failed");
-        return NULL;
     }
 
     pNode->id = id;

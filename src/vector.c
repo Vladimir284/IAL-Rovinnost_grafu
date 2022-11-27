@@ -23,13 +23,11 @@ Vector *Vector_Init(void (*VectorElementDtor)(void *)) {
     Vector *vector = (Vector *) malloc(sizeof(struct Vector_t));
     if (vector == NULL) {
         ERROR("Allocation failed");
-        return NULL; // TODO Ask Rasto
     }
     vector->array = (void **) malloc(sizeof(void *) * VECTOR_INIT_SIZE);
     if (vector->array == NULL) {
         free(vector);
         ERROR("Allocation failed");
-        return NULL; // TODO Ask Rasto
     }
 
     vector->maxSize = VECTOR_INIT_SIZE;
@@ -61,7 +59,6 @@ bool Vector_Clear(Vector *vector) {
 
     if (vector->array == NULL) {
         ERROR("Reallocation failed");
-        return NULL; // TODO Ask Rasto
     }
 
     return true;
@@ -73,7 +70,6 @@ bool Vector_PushBack(Vector *vector, void *data) {
         vector->array = (void **) realloc(vector->array, sizeof(void *) * vector->maxSize);
         if (vector->array == NULL) {
             ERROR("Reallocation failed");
-            return NULL; // TODO Ask Rasto
         }
     }
 
@@ -95,7 +91,6 @@ bool Vector_PopBack(Vector *vector) {
         vector->array = (void **) realloc(vector->array, sizeof(void *) * vector->maxSize);
         if (vector->array == NULL) {
             ERROR("Reallocation failed");
-            return NULL; // TODO Ask Rasto
         }
     }
 
@@ -130,7 +125,6 @@ bool Vector_InsertElement(Vector *vector, int index, void *data) {
         vector->array = (void **) realloc(vector->array, sizeof(void *) * vector->maxSize);
         if (vector->array == NULL) {
             ERROR("Reallocation failed");
-            return NULL; // TODO Ask Rasto
         }
     }
 
@@ -163,7 +157,6 @@ bool Vector_RemoveElement(Vector *vector, int index) {
         vector->array = (void **) realloc(vector->array, sizeof(void *) * vector->maxSize);
         if (vector->array == NULL) {
             ERROR("Reallocation failed");
-            return NULL; // TODO Ask Rasto
         }
     }
 
