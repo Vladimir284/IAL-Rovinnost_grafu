@@ -5,14 +5,13 @@
 #include "graph_test_utils.h"
 
 void Graph_Init_Test() {
-    printf("Graph tests\n");
-    printf("-----------\n");
-    printf("\n");
+    printf("           Graph tests\n");
+    printf("-----------------------------------\n\n\n");
 }
 
 void Graph_Print(Vector *graph) {
     printf("Graph size: %d\n", Vector_Size(graph));
-    printf("Graph : ");
+    printf("Graph nodes: ");
     printf("[ ");
     for (int i = 0; i < Vector_Size(graph); ++i) {
         printf("%d", Node_Get_Id((Node *) Vector_GetElement(graph, i)));
