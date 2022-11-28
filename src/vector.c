@@ -2,7 +2,7 @@
 // Created by vladimir on 11/19/22.
 //
 
-#include "vector.h"
+#include "../inc/vector.h"
 
 /**
  * @file vector.c

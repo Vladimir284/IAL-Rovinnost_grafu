@@ -2,7 +2,7 @@
 // Created by vladimir on 11/19/22.
 //
 
-#include "graph.h"
+#include "../inc/graph.h"
 
 /**
  * @file graph.c

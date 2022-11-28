@@ -2,7 +2,7 @@
 // Created by vladimir on 11/19/22.
 //
 
-#include "node.h"
+#include "../inc/node.h"
 
 /**
  * @file node.c
