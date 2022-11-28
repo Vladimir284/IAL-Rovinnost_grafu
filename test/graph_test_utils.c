@@ -2,7 +2,7 @@
 // Created by vladimir on 11/20/22.
 //
 
-#include "graph_test_utils.h"
+#include "../inc/graph_test_utils.h"
 
 void Graph_Init_Test() {
     printf("           Graph tests\n");

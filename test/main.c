@@ -2,8 +2,8 @@
 // Created by vladimir on 11/23/22.
 //
 
-#include "node_test.h"
-#include "graph_test.h"
+#include "../inc/node_test.h"
+#include "../inc/graph_test.h"
 #include <string.h>
 
 int main(int argc, char *argv[]) {

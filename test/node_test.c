@@ -1,7 +1,7 @@
 //
 // Created by vladimir on 11/21/22.
 //
-#include "node_test.h"
+#include "../inc/node_test.h"
 
 ////// Test cases
 /// Base data
@@ -50,57 +50,57 @@ void Node_Print_Search_Edge(Node *node, int *edge){
     printf("%s\n",string);
 }
 
-TEST(Test_Node_Init, "Initialise node")
+TESTNODE(Test_Node_Init, "Initialise node")
     Node_Print(test_node);
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Set_Activity_Inactive, "Set activity to inactive")
+TESTNODE(Test_Node_Set_Activity_Inactive, "Set activity to inactive")
     Node_Set_Activity(test_node,false);
     Node_Print(test_node);
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Set_Activity_Active, "Set activity to active")
+TESTNODE(Test_Node_Set_Activity_Active, "Set activity to active")
     Node_Set_Activity(test_node,true);
     Node_Print(test_node);
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Set_Color_Gray, "Set node color to grey")
+TESTNODE(Test_Node_Set_Color_Gray, "Set node color to grey")
     Node_Set_Color(test_node,grey);
     Node_Print(test_node);
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Add_Base_Edges,"Add edges into node")
+TESTNODE(Test_Node_Add_Base_Edges, "Add edges into node")
     Node_Add_Base_Data(test_node);
     Node_Print(test_node);
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Remove_Edges_Last,"Remove last 3 edges from node")
+TESTNODE(Test_Node_Remove_Edges_Last, "Remove last 3 edges from node")
     Node_Add_Base_Data(test_node);
     Node_Print(test_node);
     printf("\n");
     for (int i = 0; i < 3; ++i)
         Node_Delete_Edge(test_node, (int*) &base_edges[4-i]);
     Node_Print(test_node);
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Remove_Edges_First, "Remove first 3 edges from node")
+TESTNODE(Test_Node_Remove_Edges_First, "Remove first 3 edges from node")
     Node_Add_Base_Data(test_node);
     Node_Print(test_node);
     printf("\n");
     for (int i = 0; i < 3; ++i)
         Node_Delete_Edge(test_node, (int*) &base_edges[i]);
     Node_Print(test_node);
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Add_Additional_Edges,"Add base edges and onto it add aditional edges")
+TESTNODE(Test_Node_Add_Additional_Edges, "Add base edges and onto it add aditional edges")
     Node_Add_Base_Data(test_node);
     Node_Print(test_node);
     printf("\n");
     Node_Add_Additional_Data(test_node);
     Node_Print(test_node);
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Remove_Additional_Edges_First, "Remove first 8 edges from node with base and additional edges")
+TESTNODE(Test_Node_Remove_Additional_Edges_First, "Remove first 8 edges from node with base and additional edges")
     Node_Add_Base_Data(test_node);
     Node_Add_Additional_Data(test_node);
     Node_Print(test_node);
@@ -110,9 +110,9 @@ TEST(Test_Node_Remove_Additional_Edges_First, "Remove first 8 edges from node wi
     for (int i = 0; i < 3; ++i)
         Node_Delete_Edge(test_node, (int*) &additional_edges[i]);
     Node_Print(test_node);
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Remove_Additional_Edges_Last, "Remove last 8 edges from node with base and additional edges")
+TESTNODE(Test_Node_Remove_Additional_Edges_Last, "Remove last 8 edges from node with base and additional edges")
     Node_Add_Base_Data(test_node);
     Node_Add_Additional_Data(test_node);
     Node_Print(test_node);
@@ -120,9 +120,9 @@ TEST(Test_Node_Remove_Additional_Edges_Last, "Remove last 8 edges from node with
     for (int i = 0; i < 9; ++i)
         Node_Delete_Edge(test_node, (int*) &additional_edges[10-i]);
     Node_Print(test_node);
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Search_Edge_Additional_Edges,"Search every second edge in node with base and additional edges" )
+TESTNODE(Test_Node_Search_Edge_Additional_Edges, "Search every second edge in node with base and additional edges" )
     Node_Add_Base_Data(test_node);
     Node_Add_Additional_Data(test_node);
     Node_Print(test_node);
@@ -131,18 +131,18 @@ TEST(Test_Node_Search_Edge_Additional_Edges,"Search every second edge in node wi
         Node_Print_Search_Edge(test_node, (int*) &base_edges[i]);
     for (int i = 0; i < additional_edges_count; i+=2)
         Node_Print_Search_Edge(test_node, (int*) &additional_edges[i]);
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Search_Empty_Node_Additional_Edges,"Search every second edge in empty node" )
+TESTNODE(Test_Node_Search_Empty_Node_Additional_Edges, "Search every second edge in empty node" )
     Node_Print(test_node);
     printf("\n");
     for (int i = 1; i < base_edges_count; i+=2)
         Node_Print_Search_Edge(test_node, (int*) &base_edges[i]);
     for (int i = 0; i < additional_edges_count; i+=2)
         Node_Print_Search_Edge(test_node, (int*) &additional_edges[i]);
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Get_Edge_On_Index, "Get every single edge of node")
+TESTNODE(Test_Node_Get_Edge_On_Index, "Get every single edge of node")
     Node_Add_Base_Data(test_node);
     Node_Add_Additional_Data(test_node);
     Node_Print(test_node);
@@ -151,9 +151,9 @@ TEST(Test_Node_Get_Edge_On_Index, "Get every single edge of node")
         printf("Node on index %d: %d\n",(i+1),(*Node_Get_Edge(test_node,i)));
     for (int i = 0; i < additional_edges_count; i+=2)
         printf("Node on index %d: %d\n",(i+base_edges_count+1),(*Node_Get_Edge(test_node,i+base_edges_count)));
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Node_Empty_Get_Edge, "Get non existing edge of node")
+TESTNODE(Test_Node_Empty_Get_Edge, "Get non existing edge of node")
     Node_Print(test_node);
     printf("\n");
     for (int i = 1; i < base_edges_count; i+=2){
@@ -170,16 +170,16 @@ TEST(Test_Node_Empty_Get_Edge, "Get non existing edge of node")
         else
             printf("%d\n",(*Node_Get_Edge(test_node,i)));
     }
-ENDTEST
+ENDTESTNODE
 
-TEST(Test_Clear_Additional_Node,"Clear node with base and additional data")
+TESTNODE(Test_Clear_Additional_Node, "Clear node with base and additional data")
     Node_Add_Base_Data(test_node);
     Node_Add_Additional_Data(test_node);
     Node_Print(test_node);
     printf("\n");
     Node_Delete_All_Edges(test_node);
     Node_Print(test_node);
-ENDTEST
+ENDTESTNODE
 
 void Test_Node(){
 

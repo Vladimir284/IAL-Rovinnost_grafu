@@ -2,7 +2,7 @@
 // Created by vladimir on 11/21/22.
 //
 
-#include "node_test_utils.h"
+#include "../inc/node_test_utils.h"
 
 void Node_Init_Test() {
     printf("           Node tests\n");
