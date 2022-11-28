@@ -10,7 +10,8 @@
 #define TEST(NAME, DESCRIPTION)                                                \
   void NAME() {                                                                \
     printf("[%s] %s\n", #NAME, DESCRIPTION);                                   \
-    Vector *test_graph = Graph_Init();
+    Vector *test_graph = Graph_Init(Graph_Destroy);                            \
+    printf("\n");
 
 #define ENDTEST                                                                \
   printf("\n");                                                                \

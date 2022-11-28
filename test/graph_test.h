@@ -7,9 +7,11 @@
 
 #include "graph_test_utils.h"
 
+#define NEWLINE printf("\n")
+
 /**
  * Function with tests for graph data structure
  */
-void test_graph();
+void Test_Graph();
 
 #endif //IAL22_GRAPH_TEST_H
