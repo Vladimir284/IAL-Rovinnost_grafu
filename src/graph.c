@@ -35,6 +35,10 @@ bool Graph_Remove_Node(Vector *graph, int index){
     return Vector_RemoveElement(graph, index);
 }
 
+int Graph_Get_Size(Vector *graph){
+    return Vector_Size(graph);
+}
+
 bool Graph_Clear(Vector *graph){
     return Vector_Clear(graph);
 }
