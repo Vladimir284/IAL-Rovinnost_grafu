@@ -51,6 +51,8 @@ void Scanner_Main(Vector *graf)
             if (stav!=0)
             {
                 fprintf(stderr,"error špatný formát, na vstupu %c, čeká 'V'\n",c);
+                graf=NULL;
+                return;
             }
             for (int i = 0; i < tempint1-1; i++)
             {
@@ -58,7 +60,8 @@ void Scanner_Main(Vector *graf)
                 if (c != tempstring1[i])
                 {
                     fprintf(stderr,"error špatný formát, na vstupu %c, čeká '%c'\n",c,tempstring1[i]);
-                    return NULL;
+                    graf=NULL;
+                    return;
                 }
             }
             //zapsání id uzlu
@@ -91,7 +94,8 @@ void Scanner_Main(Vector *graf)
                         if (!Graph_Add_Node(graf, node)){
 
                             fprintf(stderr, "CHYBA volání Graph_Add_Node ve Scanneru\n");
-                            return NULL;
+                            graf=NULL;
+                            return;
                         }
                         //vyprázdnění bufferů
                         memset(buff,0,strlen(buff));
@@ -112,6 +116,8 @@ void Scanner_Main(Vector *graf)
             if (stav!=1 && stav!=2)
             {
                 fprintf(stderr,"error špatný formát, na vstupu |%c| čeká ' '\n",c);
+                graf=NULL;
+                return;
             }
             for (int i = 0; i < tempint2-1; i++)
             {
@@ -119,7 +125,8 @@ void Scanner_Main(Vector *graf)
                 if (c != tempstring2[i])
                 {
                     fprintf(stderr,"error špatný formát, na vstupu %c čeká '%c'\n",c,tempstring2[i]);
-                    return NULL;
+                    graf=NULL;
+                    return;
                 }
             }
             //zapsání id hrany
@@ -146,7 +153,8 @@ void Scanner_Main(Vector *graf)
                     if (!Node_Add_Edge(node, Edge_Init(id_temp_int))){
 
                         fprintf(stderr, "CHYBA volání Graph_Add_Node ve Scanneru\n");
-                        return NULL;
+                        graf=NULL;
+                        return;
                     }
                     //vyprázdnění bufferů
                     memset(buff,0,strlen(buff));
@@ -176,7 +184,8 @@ void Scanner_Main(Vector *graf)
                         break;
                     }
                 }
-                return NULL;
+                graf=NULL;
+                return;
                 break;
             }
         }
