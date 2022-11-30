@@ -1,42 +1,46 @@
-CC=gcc
-CFLAGS=-std=c99 -Wall -Wextra -g -DDEBUG
-LDFLAGS=-lm
-src=$(wildcard src/*.c)
-headers=$(wildcard src/*.h)
-obj=$(src:.c=.o)
-BIN=ial22
+TARGET := ial22
+SOURCES := $(wildcard src/*.c)
+OBJECTS := $(patsubst src%,obj%, $(patsubst %.c,%.o, $(SOURCES)))
 
-.PHONY: run
-all: build clean
+INCLUDE := -I.
+LIBPATH :=
+LIBS :=
 
-# CODE
-codeBuild: $(BIN)
-$(BIN): $(obj) $(headers)
-	$(CC) -o $@ $^ $(LDFLAGS)
+FLAGS := -Wall -Wextra -g -DDEBUG
+CCFLAGS := $(FLAGS) -std=c99
 
-%.o: %.c
-	$(CC) -c $(CFLAGS) -o $@ $^
+CC := gcc
 
-clean: codeClean
-	-rm -f $(BIN)
+.PHONY: clean
 
-codeClean:
-	-rm -f $(obj)
+all: codeBuild data_test
 
-code: codeBuild codeClean
+codeBuild: $(OBJECTS)
+	$(CC) $(CCFLAGS) $(INCLUDE) $(OBJECTS) -o $(TARGET) $(LIBPATH) $(LIBS)
+
+%.o: ../src/%.c
+	$(CC) $(CCFLAGS) $(INCLUDE) -c $< -o $@
+
+clean:
+	rm -rf obj/*
+	rm -f $(TARGET)
 
 # Execute with arguments: make run ARGS="some arguments"
-run: code
-	./$(BIN) $(ARGS)
+run: $(TARGET)
+	./$(TARGET) $(ARGS)
 
-test_node:
-	@./cmake-build-debug/ial22 node >node_test_current.output
+# TODO Finish adn discuss
+runAll: $(TARGET)
+	@for file in test/graph
+		./$(TARGET) <file
+
+test_structre: $(TARGET)
+	@# Tests for data structure
+	@./$(TARGET) node >node_test_current.output
 	@echo "\nTest output differences:"
 	@diff -s -U 5 node_test_current.output test/data_structure/node_test_reference.output
 	@rm -f node_test_current.output
-
-test_graph:
-	@./cmake-build-debug/ial22 graph >graph_test_current.output
+	@./$(TARGET) graph >graph_test_current.output
 	@echo "\nTest output differences:"
 	@diff -s -U 5 graph_test_current.output test/data_structure/graph_test_reference.output
-	@rm -f graph_test_current_test_current.output
+	@rm -f graph_test_current.output
