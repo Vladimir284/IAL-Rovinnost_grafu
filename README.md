@@ -24,4 +24,7 @@
 `make ...` TODO Discus
 
 ### Spuštení testů na strukturu
-`make test_structre`
+`make test_structure`
+
+### Genrování dokumentace
+`make doc`
