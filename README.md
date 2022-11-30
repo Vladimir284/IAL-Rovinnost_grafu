@@ -11,20 +11,17 @@
 | 07.12.2022 23:59:59 | Odevzdání |
 
 ## Autoři
-- **Rastislav Mazur**
+- **Rastislav Mazúr**
 - Ondřej Podroužek
 - Jakub Kavka
-- Vladimir Meciar
+- Vladimír Mečiar
  
 
-### Spustenie programu
+### Spuštení programu
 `make run ARGS="Nazov_Dokumentu""`
 
-### Spustenie programu so vsetkymi dokumentami
+### Spuštení programu se všema grafama
 `make ...` TODO Discus
 
-### Spustenie testov na strukturu
+### Spuštení testů na strukturu
 `make test_structre`
-
-### Spustenie testov na grafy
-`make ...` TODO Discuss
