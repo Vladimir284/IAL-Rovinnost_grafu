@@ -1,0 +1,25 @@
+Vertice_1:
+  - edge_to_vertice_2
+  - edge_to_vertice_4
+  - edge_to_vertice_5;
+
+Vertice_2:
+  - edge_to_vertice_1
+  - edge_to_vertice_3;
+
+Vertice_3:
+  - edge_to_vertice_2
+  - edge_to_vertice_4;
+
+Vertice_4:
+  - edge_to_vertice_1
+  - edge_to_vertice_3
+  - edge_to_vertice_5;
+
+Vertice_5:
+  - edge_to_vertice_1
+  - edge_to_vertice_4
+  - edge_to_vertice_6;
+
+Vertice_6:
+  - edge_to_vertice_5;

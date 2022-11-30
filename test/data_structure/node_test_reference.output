@@ -1,0 +1,178 @@
+           Node tests
+----------------------------------
+
+
+[Test_Node_Init] Initialise node
+
+Node id: 0
+Node edges size: 0
+Node Edges: [  ]
+Node activity: 0
+Node color: White
+
+[Test_Node_Set_Activity_Inactive] Set activity to inactive
+
+Node id: 0
+Node edges size: 0
+Node Edges: [  ]
+Node activity: 0
+Node color: White
+
+[Test_Node_Set_Activity_Active] Set activity to active
+
+Node id: 0
+Node edges size: 0
+Node Edges: [  ]
+Node activity: 1
+Node color: White
+
+[Test_Node_Set_Color_Gray] Set node color to grey
+
+Node id: 0
+Node edges size: 0
+Node Edges: [  ]
+Node activity: 0
+Node color: Grey
+
+[Test_Node_Add_Base_Edges] Add edges into node
+
+Node id: 0
+Node edges size: 5
+Node Edges: [ 1, 2, 3, 4, 5 ]
+Node activity: 0
+Node color: White
+
+[Test_Node_Remove_Edges_Last] Remove last 3 edges from node
+
+Node id: 0
+Node edges size: 5
+Node Edges: [ 1, 2, 3, 4, 5 ]
+Node activity: 0
+Node color: White
+
+Node id: 0
+Node edges size: 2
+Node Edges: [ 1, 2 ]
+Node activity: 0
+Node color: White
+
+[Test_Node_Remove_Edges_First] Remove first 3 edges from node
+
+Node id: 0
+Node edges size: 5
+Node Edges: [ 1, 2, 3, 4, 5 ]
+Node activity: 0
+Node color: White
+
+Node id: 0
+Node edges size: 2
+Node Edges: [ 4, 5 ]
+Node activity: 0
+Node color: White
+
+[Test_Node_Remove_Additional_Edges_First] Remove first 8 edges from node with base and additional edges
+
+Node id: 0
+Node edges size: 15
+Node Edges: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+Node activity: 0
+Node color: White
+
+Node id: 0
+Node edges size: 7
+Node Edges: [ 9, 10, 11, 12, 13, 14, 15 ]
+Node activity: 0
+Node color: White
+
+[Test_Node_Remove_Additional_Edges_Last] Remove last 8 edges from node with base and additional edges
+
+Node id: 0
+Node edges size: 15
+Node Edges: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+Node activity: 0
+Node color: White
+
+Node id: 0
+Node edges size: 7
+Node Edges: [ 1, 2, 3, 4, 5, 6, 7 ]
+Node activity: 0
+Node color: White
+
+[Test_Node_Search_Edge_Additional_Edges] Search every second edge in node with base and additional edges
+
+Node id: 0
+Node edges size: 15
+Node Edges: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+Node activity: 0
+Node color: White
+
+Edge 2 found
+Edge 4 found
+Edge 6 found
+Edge 8 found
+Edge 10 found
+Edge 12 found
+Edge 14 found
+
+[Test_Node_Search_Empty_Node_Additional_Edges] Search every second edge in empty node
+
+Node id: 0
+Node edges size: 0
+Node Edges: [  ]
+Node activity: 0
+Node color: White
+
+Edge 2 not found
+Edge 4 not found
+Edge 6 not found
+Edge 8 not found
+Edge 10 not found
+Edge 12 not found
+Edge 14 not found
+
+[Test_Node_Get_Edge_On_Index] Get every single edge of node
+
+Node id: 0
+Node edges size: 15
+Node Edges: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+Node activity: 0
+Node color: White
+
+Node on index 2: 2
+Node on index 4: 4
+Node on index 6: 6
+Node on index 8: 8
+Node on index 10: 10
+Node on index 12: 12
+Node on index 14: 14
+
+[Test_Node_Empty_Get_Edge] Get non existing edge of node
+
+Node id: 0
+Node edges size: 0
+Node Edges: [  ]
+Node activity: 0
+Node color: White
+
+Node on index 2: does not exist
+Node on index 4: does not exist
+Node on index 6: does not exist
+Node on index 8: does not exist
+Node on index 10: does not exist
+Node on index 12: does not exist
+Node on index 14: does not exist
+
+[Test_Clear_Additional_Node] Clear node with base and additional data
+
+Node id: 0
+Node edges size: 15
+Node Edges: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+Node activity: 0
+Node color: White
+
+Node id: 0
+Node edges size: 0
+Node Edges: [  ]
+Node activity: 0
+Node color: White
+

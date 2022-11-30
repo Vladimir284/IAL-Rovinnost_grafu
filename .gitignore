@@ -53,20 +53,9 @@ dkms.conf
 
 # Jetbrains
 .idea
+CMakeLists.txt
+cmake-build-debug
+CMakeLists.txt
 
-# Documentation
-documentary.pdf
-doc/latex/documentary.aux
-doc/latex/documentary.fdb_latexmk
-doc/latex/documentary.fls
-doc/latex/documentary.log
-doc/latex/documentary.out
-doc/latex/documentary.synctex.gz
-doc/latex/documentary.toc
-doc/latex/modules/*.aux
-documentary.aux
-documentary.fdb_latexmk
-documentary.fls
-documentary.log
-documentary.out
-documentary.toc
+# Output
+ial22
