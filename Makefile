@@ -34,7 +34,7 @@ runAll: $(TARGET)
 	@for file in test/graph
 		./$(TARGET) <file
 
-test_structre: $(TARGET)
+test_structure: $(TARGET)
 	@# Tests for data structure
 	@./$(TARGET) node >node_test_current.output
 	@echo "\nTest output differences:"
@@ -44,3 +44,10 @@ test_structre: $(TARGET)
 	@echo "\nTest output differences:"
 	@diff -s -U 5 graph_test_current.output test/data_structure/graph_test_reference.output
 	@rm -f graph_test_current.output
+
+test_scanner:
+	# Write tests here
+	@./$(TARGET) scanner <input/graph_Franklin.graph >scanner_test_current.output
+	@echo "\nTest output differences:"
+	@diff -s -U 5 scanner_test_current.output test/scanner/scanner_name_reference.output
+	@rm -f node_test_current.output

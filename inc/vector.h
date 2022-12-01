@@ -15,6 +15,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #define ERROR(ARG) fprintf(stderr, "ERROR %s\n",ARG); exit(1)
 #define WARNING(ARG) //fprintf(stderr, "WARNING %s\n",ARG) Silent for now, not needed

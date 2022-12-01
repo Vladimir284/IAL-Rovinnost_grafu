@@ -1,5 +1,5 @@
-#include "graph.h"
-#include "scanner.h"
+#include "../inc/graph.h"
+#include "../inc/scanner.h"
 
 int *Edge_Init(int id){
     int *pId = (int*) malloc (sizeof(int));
@@ -21,7 +21,6 @@ void Scanner_Main(Vector *graf)
     * 2 -> po zapsání hrany
     */
     int stav = 0;
-    int stav_temp;
 
     //buffer pro zapsání id
     char buff[20];
@@ -107,8 +106,8 @@ void Scanner_Main(Vector *graf)
                     }
                 }
                 fprintf(stderr,"error špatný formát, na vstupu %c\n",c);
-                return NULL;
-                break;
+                Graph_Destroy(graf);
+                return;
             }
             
 
@@ -153,7 +152,7 @@ void Scanner_Main(Vector *graf)
                     if (!Node_Add_Edge(node, Edge_Init(id_temp_int))){
 
                         fprintf(stderr, "CHYBA volání Graph_Add_Node ve Scanneru\n");
-                        graf=NULL;
+                        Graph_Destroy(graf);
                         return;
                     }
                     //vyprázdnění bufferů
@@ -172,7 +171,7 @@ void Scanner_Main(Vector *graf)
                         if (!Node_Add_Edge(node, Edge_Init(id_temp_int))){
 
                             fprintf(stderr, "CHYBA volání Graph_Add_Node ve Scanneru\n");
-                            graf=NULL;
+                            Graph_Destroy(graf);
                             return;
                         }
                         

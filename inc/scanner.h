@@ -3,8 +3,6 @@
 #define IAL22_SCANNER_H
 
 #include "graph.h"
-#include <stdio.h>
-#include <string.h>
 
 /**
  * @brief reads file from stdin and places all the data into graf
