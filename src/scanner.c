@@ -172,7 +172,8 @@ void Scanner_Main(Vector *graf)
                         if (!Node_Add_Edge(node, Edge_Init(id_temp_int))){
 
                             fprintf(stderr, "CHYBA volání Graph_Add_Node ve Scanneru\n");
-                            return NULL;
+                            graf=NULL;
+                            return;
                         }
                         
                         //vyprázdnění bufferů
@@ -186,7 +187,6 @@ void Scanner_Main(Vector *graf)
                 }
                 graf=NULL;
                 return;
-                break;
             }
         }
     }
