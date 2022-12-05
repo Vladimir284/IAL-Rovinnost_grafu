@@ -48,7 +48,7 @@ void Scanner_Main(Vector *graf)
         case 'V':
             if (stav!=0)
             {
-                fprintf(stderr,"error špatný formát, na vstupu stav!=0 %c, čeká 'V'\n",c);
+                fprintf(stderr,"error špatný přechod před uzlem '%c', čeká 'V'\n",c);
                 Graph_Destroy(graf);
                 return;
             }
@@ -58,7 +58,7 @@ void Scanner_Main(Vector *graf)
                 c = getchar();
                 if (c != tempstring1[i])
                 {
-                    fprintf(stderr,"error špatný formát, na vstupu c != tempstring1[i] %c, čeká '%c'\n",c,tempstring1[i]);
+                    fprintf(stderr,"error špatný název uzlu '%c', čeká '%c'\n",c,tempstring1[i]);
                     Graph_Destroy(graf);
                     return;
                 }
@@ -103,7 +103,7 @@ void Scanner_Main(Vector *graf)
                         break;
                     }
                 }
-                fprintf(stderr,"error špatný formát, na vstupu where? %c\n",c);
+                fprintf(stderr,"error špatný znak '%c' v uzlu\n",c);
                 Graph_Destroy(graf);
                 return;
             }
@@ -114,7 +114,7 @@ void Scanner_Main(Vector *graf)
             {
                 if (stav!=1)
                 {
-                    fprintf(stderr,"error špatný formát, na vstupu stav!=1 && stav!=2 |%c| čeká ' ' stav=%d\n",c, stav);
+                    fprintf(stderr,"error špatný přechod před hranou '%c' čeká ' ' stav=%d\n",c, stav);
                     Graph_Destroy(graf);
                     return;
                 }
@@ -124,7 +124,7 @@ void Scanner_Main(Vector *graf)
                 c = getchar();
                 if (c != tempstring2[i])
                 {
-                    fprintf(stderr,"error špatný formát, na vstupu c != tempstring2[i] 2 %c čeká '%c'\n",c,tempstring2[i]);
+                    fprintf(stderr,"error špatný název hrany '%c' čeká '%c'\n",c,tempstring2[i]);
                     Graph_Destroy(graf);
                     return;
                 }
