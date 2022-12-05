@@ -18,13 +18,9 @@ void Test_Scanner() {
 
     // Init graph
     Vector *test_graph = Graph_Init();
-    //DEBUG("LINE13");
 
     // Fill graph with data
-    Scanner_Main(test_graph);
-    //DEBUG("LINE17");
-
-    if (test_graph != NULL) {
+    if (Scanner_Main(test_graph)) {
 
         // Print Graph
         Graph_Print(test_graph);
@@ -36,7 +32,7 @@ void Test_Scanner() {
         //printf("Node 0 %s\n",(Graph_Get_Node(test_graph,0)==NULL)  ? "Null" : "Not Null");
         Node *tmp_node;
         int i = 0;
-        //printf("Gay\n");
+
         while ((tmp_node = Graph_Get_Node(test_graph, i)) != NULL) {
             //printf("Gay\n");
             Node_Print(tmp_node);
@@ -54,5 +50,9 @@ void Test_Scanner() {
 
         // Finally, done :D
         Graph_Destroy(test_graph);
+
     }
+
+    // Scanner not working
+    Graph_Destroy(test_graph);
 }
