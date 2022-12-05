@@ -4,24 +4,55 @@
 
 #include "../inc/test_scanner.h"
 
+#define MAINDEBUG(PARAM) printf("%s\n",PARAM)
+
+void Scanner_Init_Tests() {
+    printf("           Scanner tests\n");
+    printf("-------------------------------------\n\n\n");
+}
+
 void Test_Scanner() {
+
+    //And the shitshow is about to begin
+    Scanner_Init_Tests();
 
     // Init graph
     Vector *test_graph = Graph_Init();
+    //DEBUG("LINE13");
 
     // Fill graph with data
     Scanner_Main(test_graph);
+    //DEBUG("LINE17");
 
-    // Print Graph
-    Graph_Print(test_graph);
-    printf("\n");
-    for (int i = 0; i < Graph_Get_Size(test_graph); ++i) {
-        Node_Print(Graph_Get_Node(test_graph, i));
+    if (test_graph != NULL) {
+
+        // Print Graph
+        Graph_Print(test_graph);
         printf("\n");
-    }
-    printf("\n");
+        //DEBUG("LINE22");
 
-    // Finally, done :D
-    if (test_graph != NULL)
+
+        //printf("Graph %s\n",(test_graph==NULL)  ? "Null" : "Not Null");
+        //printf("Node 0 %s\n",(Graph_Get_Node(test_graph,0)==NULL)  ? "Null" : "Not Null");
+        Node *tmp_node;
+        int i = 0;
+        //printf("Gay\n");
+        while ((tmp_node = Graph_Get_Node(test_graph, i)) != NULL) {
+            //printf("Gay\n");
+            Node_Print(tmp_node);
+            printf("\n");
+            i++;
+        }
+
+        //printf("\n");
+        //DEBUG("Line 30");
+
+
+        //printf("Graph - %s\n", (test_graph == NULL) ? "Null" : "Not null");
+        //printf("Array of graph - %s\n", (Graph_Get_Node(test_graph, 0) == NULL) ? "Null" : "Not null");
+
+
+        // Finally, done :D
         Graph_Destroy(test_graph);
+    }
 }
