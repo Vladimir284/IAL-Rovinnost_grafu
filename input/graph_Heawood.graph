@@ -1,57 +1,57 @@
 Vertice_1:
-  - edge_to_vertice_9
-  - edge_to_vertice_11
-  - edge_to_vertice_12;
+ - edge_to_vertice_9
+ - edge_to_vertice_11
+ - edge_to_vertice_12;
 Vertice_2:
-  - edge_to_vertice_3
-  - edge_to_vertice_10
-  - edge_to_vertice_12;
+ - edge_to_vertice_3
+ - edge_to_vertice_10
+ - edge_to_vertice_12;
 Vertice_3:
-  - edge_to_vertice_2
-  - edge_to_vertice_4
-  - edge_to_vertice_13;
+ - edge_to_vertice_2
+ - edge_to_vertice_4
+ - edge_to_vertice_13;
 Vertice_4:
-  - edge_to_vertice_3
-  - edge_to_vertice_11
-  - edge_to_vertice_14;
+ - edge_to_vertice_3
+ - edge_to_vertice_11
+ - edge_to_vertice_14;
 Vertice_5:
-  - edge_to_vertice_6
-  - edge_to_vertice_12
-  - edge_to_vertice_14;
+ - edge_to_vertice_6
+ - edge_to_vertice_12
+ - edge_to_vertice_14;
 Vertice_6:
-  - edge_to_vertice_7
-  - edge_to_vertice_13
-  - edge_to_vertice_5;
+ - edge_to_vertice_7
+ - edge_to_vertice_13
+ - edge_to_vertice_5;
 Vertice_7:
-  - edge_to_vertice_6
-  - edge_to_vertice_10
-  - edge_to_vertice_11;
+ - edge_to_vertice_6
+ - edge_to_vertice_10
+ - edge_to_vertice_11;
 Vertice_8:
-  - edge_to_vertice_9
-  - edge_to_vertice_10
-  - edge_to_vertice_14;
+ - edge_to_vertice_9
+ - edge_to_vertice_10
+ - edge_to_vertice_14;
 Vertice_9:
-  - edge_to_vertice_1
-  - edge_to_vertice_8
-  - edge_to_vertice_13;
+ - edge_to_vertice_1
+ - edge_to_vertice_8
+ - edge_to_vertice_13;
 Vertice_10:
-  - edge_to_vertice_2
-  - edge_to_vertice_7
-  - edge_to_vertice_8;
+ - edge_to_vertice_2
+ - edge_to_vertice_7
+ - edge_to_vertice_8;
 Vertice_11:
-  - edge_to_vertice_1
-  - edge_to_vertice_4
-  - edge_to_vertice_7;
+ - edge_to_vertice_1
+ - edge_to_vertice_4
+ - edge_to_vertice_7;
 Vertice_12:
-  - edge_to_vertice_1
-  - edge_to_vertice_2
-  - edge_to_vertice_5;
+ - edge_to_vertice_1
+ - edge_to_vertice_2
+ - edge_to_vertice_5;
 Vertice_13:
-  - edge_to_vertice_3
-  - edge_to_vertice_6
-  - edge_to_vertice_9;
+ - edge_to_vertice_3
+ - edge_to_vertice_6
+ - edge_to_vertice_9;
 Vertice_14:
-  - edge_to_vertice_4
-  - edge_to_vertice_5
-  - edge_to_vertice_8;
+ - edge_to_vertice_4
+ - edge_to_vertice_5
+ - edge_to_vertice_8;
   
