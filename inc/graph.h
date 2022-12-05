@@ -71,10 +71,5 @@ int Graph_Get_Size(Vector *graph);
  */
 bool Graph_Clear(Vector *graph);
 
-/**
- * Destroy graph
- * @param ptr pointer on allocated graph
- */
-void Graph_Destroy(void *ptr);
 
 #endif //IAL22_GRAPH_H

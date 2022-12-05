@@ -22,19 +22,16 @@ codeBuild: $(OBJECTS)
 	$(CC) $(CCFLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
-	rm -rf obj/*
+	rm -rf obj
 	rm -f $(TARGET)
+	mkdir obj
 
 # Execute with arguments: make run ARGS="some arguments"
 run: $(TARGET)
 	./$(TARGET) $(ARGS)
 
-# TODO Finish adn discuss
-runAll: $(TARGET)
-	@for file in test/graph
-		./$(TARGET) <file
 
-test_structure: $(TARGET)
+test_structure: all
 	@# Tests for data structure
 	@./$(TARGET) node >node_test_current.output
 	@echo "\nTest output differences:"
@@ -45,9 +42,5 @@ test_structure: $(TARGET)
 	@diff -s -U 5 graph_test_current.output test/data_structure/graph_test_reference.output
 	@rm -f graph_test_current.output
 
-test_scanner:
-	# Write tests here
-	@./$(TARGET) scanner <input/graph_Franklin.graph >scanner_test_current.output
-	@echo "\nTest output differences:"
-	@diff -s -U 5 scanner_test_current.output test/scanner/scanner_name_reference.output
-	@rm -f node_test_current.output
+test_scanner: all
+	./scanner_test.sh
