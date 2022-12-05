@@ -13,7 +13,7 @@ CC := gcc
 
 .PHONY: clean
 
-all: codeBuild data_test
+all: clean codeBuild
 
 codeBuild: $(OBJECTS)
 	$(CC) $(CCFLAGS) $(INCLUDE) $(OBJECTS) -o $(TARGET) $(LIBPATH) $(LIBS)

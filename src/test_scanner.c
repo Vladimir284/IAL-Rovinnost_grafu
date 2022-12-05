@@ -22,5 +22,6 @@ void Test_Scanner() {
     printf("\n");
 
     // Finally, done :D
-    Graph_Destroy(test_graph);
+    if (test_graph != NULL)
+        Graph_Destroy(test_graph);
 }
