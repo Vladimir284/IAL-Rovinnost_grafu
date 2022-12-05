@@ -56,7 +56,7 @@ Vertice_10:
  - edge_to_vertice_5
  - edge_to_vertice_9
  - edge_to_vertice_11;
-vertice_11:
+Vertice_11:
  - edge_to_vertice_5
  - edge_to_vertice_6
  - edge_to_vertice_9
