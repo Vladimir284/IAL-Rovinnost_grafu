@@ -43,23 +43,23 @@ void Scanner_Main(Vector *graf)
     //procházení souboru
     while ((c = getchar()) != EOF)
     {
-
         switch (c)
         {
         case 'V':
             if (stav!=0)
             {
-                fprintf(stderr,"error špatný formát, na vstupu %c, čeká 'V'\n",c);
-                graf=NULL;
+                fprintf(stderr,"error špatný formát, na vstupu stav!=0 %c, čeká 'V'\n",c);
+                Graph_Destroy(graf);
                 return;
             }
+            //projde Vertice
             for (int i = 0; i < tempint1-1; i++)
             {
                 c = getchar();
                 if (c != tempstring1[i])
                 {
-                    fprintf(stderr,"error špatný formát, na vstupu %c, čeká '%c'\n",c,tempstring1[i]);
-                    graf=NULL;
+                    fprintf(stderr,"error špatný formát, na vstupu c != tempstring1[i] %c, čeká '%c'\n",c,tempstring1[i]);
+                    Graph_Destroy(graf);
                     return;
                 }
             }
@@ -80,7 +80,7 @@ void Scanner_Main(Vector *graf)
                     c == '9' )
                 {
                     *id++ = c;
-                    continue;;
+                    continue;
 
                 }else if(c == ':'){
                     c = getchar();
@@ -88,43 +88,44 @@ void Scanner_Main(Vector *graf)
                     {
                         c = getchar();
                         id_temp_int = atoi(buff);
-
                         node = Node_Init(id_temp_int);
                         if (!Graph_Add_Node(graf, node)){
 
                             fprintf(stderr, "CHYBA volání Graph_Add_Node ve Scanneru\n");
-                            graf=NULL;
+                            Graph_Destroy(graf);
                             return;
                         }
                         //vyprázdnění bufferů
                         memset(buff,0,strlen(buff));
                         id=buff;
                         buff[0]='\0';
-
                         stav=1;
                         break;
                     }
                 }
-                fprintf(stderr,"error špatný formát, na vstupu %c\n",c);
+                fprintf(stderr,"error špatný formát, na vstupu where? %c\n",c);
                 Graph_Destroy(graf);
                 return;
             }
             
 
         case ' ':
-            if (stav!=1 && stav!=2)
+            if (stav!=2)
             {
-                fprintf(stderr,"error špatný formát, na vstupu |%c| čeká ' '\n",c);
-                graf=NULL;
-                return;
+                if (stav!=1)
+                {
+                    fprintf(stderr,"error špatný formát, na vstupu stav!=1 && stav!=2 |%c| čeká ' ' stav=%d\n",c, stav);
+                    Graph_Destroy(graf);
+                    return;
+                }
             }
             for (int i = 0; i < tempint2-1; i++)
             {
                 c = getchar();
                 if (c != tempstring2[i])
                 {
-                    fprintf(stderr,"error špatný formát, na vstupu %c čeká '%c'\n",c,tempstring2[i]);
-                    graf=NULL;
+                    fprintf(stderr,"error špatný formát, na vstupu c != tempstring2[i] 2 %c čeká '%c'\n",c,tempstring2[i]);
+                    Graph_Destroy(graf);
                     return;
                 }
             }
@@ -159,13 +160,12 @@ void Scanner_Main(Vector *graf)
                     memset(buff,0,strlen(buff));
                     id=buff;
                     buff[0]='\0';
-
                     stav=2;
                     break;
                 }else if(c == ';'){
                     c = getchar();
                     if(c == '\n'){
-                        c = getchar();
+                        //c = getchar();
                         id_temp_int = atoi(buff);
 
                         if (!Node_Add_Edge(node, Edge_Init(id_temp_int))){
@@ -179,12 +179,11 @@ void Scanner_Main(Vector *graf)
                         memset(buff,0,strlen(buff));
                         id=buff;
                         buff[0]='\0';
-
                         stav=0;
                         break;
                     }
                 }
-                graf=NULL;
+                Graph_Destroy(graf);
                 return;
             }
         }
