@@ -25,34 +25,23 @@ void Test_Scanner() {
         // Print Graph
         Graph_Print(test_graph);
         printf("\n");
-        //DEBUG("LINE22");
 
 
-        //printf("Graph %s\n",(test_graph==NULL)  ? "Null" : "Not Null");
-        //printf("Node 0 %s\n",(Graph_Get_Node(test_graph,0)==NULL)  ? "Null" : "Not Null");
         Node *tmp_node;
         int i = 0;
 
+        // Print all nodes
         while ((tmp_node = Graph_Get_Node(test_graph, i)) != NULL) {
-            //printf("Gay\n");
             Node_Print(tmp_node);
-            printf("\n");
+            if (i + 1 != Graph_Get_Size(test_graph))
+                printf("\n");
             i++;
         }
 
-        //printf("\n");
-        //DEBUG("Line 30");
-
-
-        //printf("Graph - %s\n", (test_graph == NULL) ? "Null" : "Not null");
-        //printf("Array of graph - %s\n", (Graph_Get_Node(test_graph, 0) == NULL) ? "Null" : "Not null");
-
-
         // Finally, done :D
         Graph_Destroy(test_graph);
-
+    } else {
+        // Scanner not working
+        Graph_Destroy(test_graph);
     }
-
-    // Scanner not working
-    Graph_Destroy(test_graph);
 }
