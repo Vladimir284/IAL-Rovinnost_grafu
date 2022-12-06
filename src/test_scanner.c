@@ -40,8 +40,5 @@ void Test_Scanner() {
 
         // Finally, done :D
         Graph_Destroy(test_graph);
-    } else {
-        // Scanner not working
-        Graph_Destroy(test_graph);
     }
 }
