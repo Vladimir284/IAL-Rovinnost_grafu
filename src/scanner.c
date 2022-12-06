@@ -1,7 +1,7 @@
 #include "../inc/graph.h"
 #include "../inc/scanner.h"
 
-#define SCANNERERROR(PARAM) fprintf(stderr,"ERROR, %s\n",PARAM); Graph_Destroy(graf); graf=NULL; return false;
+#define SCANNERERROR(PARAM) fprintf(stderr,"ERROR, %s\n",PARAM); Graph_Destroy(graf); return false;
 #define SCANNERDEBUG(PARAM) printf("%s\n",PARAM)
 
 int *Edge_Init(int id) {
