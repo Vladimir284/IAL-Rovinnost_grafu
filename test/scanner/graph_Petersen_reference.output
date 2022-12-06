@@ -1,0 +1,10 @@
+==================================
+Graph size: GRAPH_SIZE
+Graph nodes: [ GRAPH_NODES ]
+
+Node id: NODE_ID
+Node edges size: NODE_SIZE
+Node Edges : [ NODE_EDGES ]
+Node activity: NODE_ACTIVITY
+Node color: NODE_COLOR
+==================================

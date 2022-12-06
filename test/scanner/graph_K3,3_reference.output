@@ -1,0 +1,43 @@
+           Scanner tests
+-------------------------------------
+
+
+Graph size: 6
+Graph nodes: [ 1, 2, 3, 4, 5, 6 ]
+
+Node id: 1
+Node edges size: 3
+Node Edges: [ 4, 5, 6 ]
+Node activity: 0
+Node color: White
+
+Node id: 2
+Node edges size: 3
+Node Edges: [ 4, 5, 6 ]
+Node activity: 0
+Node color: White
+
+Node id: 3
+Node edges size: 3
+Node Edges: [ 4, 5, 6 ]
+Node activity: 0
+Node color: White
+
+Node id: 4
+Node edges size: 3
+Node Edges: [ 1, 2, 3 ]
+Node activity: 0
+Node color: White
+
+Node id: 5
+Node edges size: 3
+Node Edges: [ 1, 2, 3 ]
+Node activity: 0
+Node color: White
+
+Node id: 6
+Node edges size: 3
+Node Edges: [ 1, 2, 3 ]
+Node activity: 0
+Node color: White
+
