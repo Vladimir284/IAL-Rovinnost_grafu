@@ -30,17 +30,22 @@ clean:
 run: $(TARGET)
 	./$(TARGET) $(ARGS)
 
+test: test_structure test_scanner
 
-test_structure: all
+test_structure: test_node_structure test_graph_structure
+
+test_node_structure: all
 	@# Tests for data structure
 	@./$(TARGET) node >node_test_current.output
 	@echo "\nTest output differences:"
 	@diff -s -U 5 node_test_current.output test/data_structure/node_test_reference.output
 	@rm -f node_test_current.output
+
+test_graph_structure: all
 	@./$(TARGET) graph >graph_test_current.output
 	@echo "\nTest output differences:"
 	@diff -s -U 5 graph_test_current.output test/data_structure/graph_test_reference.output
 	@rm -f graph_test_current.output
 
 test_scanner: all
-	./scanner_test.sh
+	./test/scanner_test.sh
