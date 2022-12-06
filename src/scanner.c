@@ -13,7 +13,7 @@ int *Edge_Init(int id) {
 
 
 //Vector *Scanner_Main(const char *file_name)
-void Scanner_Main(Vector *graf) {
+bool Scanner_Main(Vector *graf) {
     //inicializace proměnných
     char c;
 
