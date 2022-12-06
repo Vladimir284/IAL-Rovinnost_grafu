@@ -47,7 +47,7 @@ bool Scanner_Main(Vector *graf) {
         switch (c) {
             case 'V':
                 if (stav != 0) {
-                    SCANNERDEBUG("Line 50");
+                    //SCANNERDEBUG("Line 50");
                     SCANNERERROR("Wrong name syntax for vertice name")
                 }
                 //projde Vertice
@@ -100,12 +100,15 @@ bool Scanner_Main(Vector *graf) {
             case ' ':
                 if (stav != 2) {
                     if (stav != 1) {
+                        SCANNERDEBUG("\n\nGay\n\n");
+                        printf("%c - %d \n",c,(int)c);
                         SCANNERERROR("Wrong format for edge name")
                     }
                 }
                 for (int i = 0; i < tempint2 - 1; i++) {
                     c = getchar();
                     if (c != tempstring2[i]) {
+                        SCANNERDEBUG("\n\nUltraGay\n\n");
                         SCANNERERROR("Wrong format for edge name")
                     }
                 }
