@@ -103,7 +103,6 @@ bool Scanner_Main(Vector *graf) {
                 for (int i = 0; i < tempint2 - 1; i++) {
                     c = getchar();
                     if (c != tempstring2[i]) {
-                        SCANNERDEBUG("\n\nUltraGay\n\n");
                         SCANNERERROR("Wrong format for edge name")
                     }
 

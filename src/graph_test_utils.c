@@ -10,7 +10,7 @@ void Graph_Init_Test() {
 }
 
 void Graph_Print(Vector *graph) {
-    printf("Graph size: %d\n", Vector_Size(graph));
+    printf("Graph length: %d\n", Vector_Size(graph));
     printf("Graph nodes: ");
     printf("[ ");
     for (int i = 0; i < Vector_Size(graph); ++i) {

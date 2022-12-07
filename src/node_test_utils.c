@@ -10,7 +10,7 @@ void Node_Init_Test() {
 }
 
 void Node_Print_Edges(Node *node) {
-    printf("Node edges size: %d\n", Vector_Size(Node_Get_Edges(node)));
+    printf("Node edges length: %d\n", Vector_Size(Node_Get_Edges(node)));
     printf("Node Edges: ");
     printf("[ ");
     for (int i = 0; i < Vector_Size(Node_Get_Edges(node)); ++i) {

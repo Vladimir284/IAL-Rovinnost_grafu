@@ -58,7 +58,7 @@ Node *Graph_Get_Node(Vector *graph, int index);
 bool Graph_Remove_Node(Vector *graph, int index);
 
 /**
- * Get size of graph (amount of nodes)
+ * Get length of graph (amount of nodes)
  * @param graph Pointer on graph
  * @return Length of graph
  */

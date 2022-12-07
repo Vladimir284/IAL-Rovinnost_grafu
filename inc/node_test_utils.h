@@ -7,7 +7,7 @@
 
 #include "node.h"
 
-#define TESTNODE(NAME, DESCRIPTION)                                           \
+#define TESTNODE(NAME, DESCRIPTION)                                            \
   void NAME() {                                                                \
     printf("[%s] %s\n", #NAME, DESCRIPTION);                                   \
     Node *test_node = Node_Init((int) node_id);                                \

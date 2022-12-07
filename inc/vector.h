@@ -18,9 +18,9 @@
 #include <string.h>
 
 #define ERROR(ARG) fprintf(stderr, "ERROR %s\n",ARG); exit(1)
-#define WARNING(ARG) //fprintf(stderr, "WARNING %s\n",ARG) // Silent for now, not needed
+#define WARNING(ARG) //fprintf(stderr, "WARNING %s\n",ARG) // Silent for project, not needed
 
-// Typedef of vector is here so only functions Get can acces values stored in vector
+// Typedef of vector is here so only functions Get can access values stored in vector
 typedef struct Vector_t Vector;
 
 /**
@@ -51,25 +51,6 @@ bool Vector_Clear(Vector *vector);
 bool Vector_PushBack(Vector *vector, void* data);
 
 /**
- * @brief Destroys last element, on empty nothing
- * @param vector Vector
- * @return true upon success, otherwise false @note PopBack upon empty Vector is success too
- */
-bool Vector_PopBack(Vector *vector);
-
-/**
- * @param vector Vector
- * @return Last data in vector
- */
-void *Vector_Back(Vector *vector);
-
-/**
- * @param vector Vector
- * @return true if empty otherwise false
- */
-bool Vector_IsEmpty(Vector *vector);
-
-/**
  * @param vector Vector
  * @return Size of vector
  */
@@ -81,15 +62,6 @@ int Vector_Size(Vector *vector);
  * @return Element at certain index, NULL if out-of-bounds
  */
 void* Vector_GetElement(Vector *vector, int index);
-
-/**
- * @brief Inserts Element at specified length
- * @param vector Vector
- * @param index Where to add new data
- * @param data Data
- * @return True upon success otherwise false
- */
-bool Vector_InsertElement(Vector *vector, int index, void* data);
 
 /**
  * @param vector Vector
