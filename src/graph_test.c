@@ -1,3 +1,11 @@
+/**
+ * @file graph.c
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Vladimir Meciar (xmecia00)
+ * @brief TODO
+ * @changes 07.12.2022
+ */
+
 //
 // Created by vladimir on 11/21/22.
 //
