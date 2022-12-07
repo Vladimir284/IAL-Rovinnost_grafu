@@ -9,7 +9,7 @@
 
 ## Zadání
 - [Online](https://www.vut.cz/studis/student.phtml?sn=zadani_detail&apid=230956&zid=50673)
-- [Ofline v dokumentacii](documentary.pdf)
+- [Offline v dokumenkaci](documentary.pdf)
 
 ## Termíny
 | Deadline            | Event     |
@@ -24,10 +24,10 @@
  
 
 ### Spuštení programu
-`make run ARGS="Nazov_Dokumentu""`
+`make run ARGS="Nazev_Dokumentu""`
 
 ### Spuštení testů
 `make test_test`
 
-### Genrování dokumentace
+### Generování dokumentace
 `make doc`
