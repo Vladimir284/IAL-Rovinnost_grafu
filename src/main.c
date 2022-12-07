@@ -4,7 +4,7 @@
 
 #include "../inc/node_test.h"
 #include "../inc/graph_test.h"
-#include <string.h>
+#include "../inc/test_scanner.h"
 
 #define TEST 1
 
@@ -19,7 +19,8 @@ int main(int argc, char *argv[]) {
             Test_Node();
         else if (strcmp("graph", argv[1]) == 0)
             Test_Graph();
-
+        else if (strcmp("scanner",argv[1]) == 0)
+            Test_Scanner();
         return 0;
     }
 }

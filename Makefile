@@ -13,7 +13,7 @@ CC := gcc
 
 .PHONY: clean
 
-all: codeBuild data_test
+all: clean codeBuild
 
 codeBuild: $(OBJECTS)
 	$(CC) $(CCFLAGS) $(INCLUDE) $(OBJECTS) -o $(TARGET) $(LIBPATH) $(LIBS)
@@ -21,43 +21,31 @@ codeBuild: $(OBJECTS)
 %.o: ../src/%.c
 	$(CC) $(CCFLAGS) $(INCLUDE) -c $< -o $@
 
-clean: docClean
-	rm -rf obj/*
+clean:
+	rm -rf obj
 	rm -f $(TARGET)
+	mkdir obj
 
 # Execute with arguments: make run ARGS="some arguments"
 run: $(TARGET)
 	./$(TARGET) $(ARGS)
 
-# TODO Finish adn discuss
-runAll: $(TARGET)
-	@for file in test/graph
-		./$(TARGET) <file
+test: test_structure test_scanner
 
-test_structure: $(TARGET)
+test_structure: test_node_structure test_graph_structure
+
+test_node_structure: all
 	@# Tests for data structure
 	@./$(TARGET) node >node_test_current.output
-	@echo "\nTest output differences:"
+	@echo "Test output differences:"
 	@diff -s -U 5 node_test_current.output test/data_structure/node_test_reference.output
 	@rm -f node_test_current.output
+
+test_graph_structure: all
 	@./$(TARGET) graph >graph_test_current.output
-	@echo "\nTest output differences:"
+	@echo "Test output differences:"
 	@diff -s -U 5 graph_test_current.output test/data_structure/graph_test_reference.output
 	@rm -f graph_test_current.output
 
-docBuild:
-	latexmk -pdf doc/latex/documentary.tex
-
-docClean:
-	rm -f documentary.aux
-	rm -f documentary.fdb_latexmk
-	rm -f documentary.fls
-	rm -f documentary.lof
-	rm -f documentary.log
-	rm -f documentary.lot
-	rm -f documentary.out
-	rm -f documentary.toc
-	rm -f doc/latex/*.aux
-	rm -f doc/latex/modules/*.aux
-
-doc: docBuild docClean
+test_scanner: all
+	./test/scanner_test.sh
