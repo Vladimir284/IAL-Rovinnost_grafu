@@ -16,7 +16,7 @@ CC := gcc
 all: clean codeBuild
 
 docBuild:
-	latexmk -pdf doc/latex/documentary.tex
+	latexmk -pdf doc/documentary.tex
 
 docClean:
 	rm -f documentary.aux
@@ -27,8 +27,8 @@ docClean:
 	rm -f documentary.lot
 	rm -f documentary.out
 	rm -f documentary.toc
-	rm -f doc/latex/*.aux
-	rm -f doc/latex/modules/*.aux
+	rm -f doc/*.aux
+	rm -f doc/modules/*.aux
 
 doc: docBuild docClean
 
@@ -66,3 +66,6 @@ test_graph_structure: all
 
 test_scanner: all
 	./test/scanner_test.sh
+
+pack:
+	# TBD
