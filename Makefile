@@ -15,13 +15,30 @@ CC := gcc
 
 all: clean codeBuild
 
+docBuild:
+	latexmk -pdf doc/latex/documentary.tex
+
+docClean:
+	rm -f documentary.aux
+	rm -f documentary.fdb_latexmk
+	rm -f documentary.fls
+	rm -f documentary.lof
+	rm -f documentary.log
+	rm -f documentary.lot
+	rm -f documentary.out
+	rm -f documentary.toc
+	rm -f doc/latex/*.aux
+	rm -f doc/latex/modules/*.aux
+
+doc: docBuild docClean
+
 codeBuild: $(OBJECTS)
 	$(CC) $(CCFLAGS) $(INCLUDE) $(OBJECTS) -o $(TARGET) $(LIBPATH) $(LIBS)
 
 %.o: ../src/%.c
 	$(CC) $(CCFLAGS) $(INCLUDE) -c $< -o $@
 
-clean:
+clean: docClean
 	rm -rf obj
 	rm -f $(TARGET)
 	mkdir obj
