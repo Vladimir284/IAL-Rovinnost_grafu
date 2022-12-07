@@ -104,5 +104,5 @@ pack: clean
 	cp README.md xmazur09
 	cp Makefile xmazur09
 	zip -r xmazur09.zip xmazur09
-	rm xmazur09
+	rm -rf xmazur09
 
