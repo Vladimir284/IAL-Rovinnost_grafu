@@ -1,15 +1,14 @@
-//
-// Created by vladimir on 11/19/22.
-//
-
-#ifndef IAL22_NODE_H
-#define IAL22_NODE_H
-
 /**
- * @file node.h
+ * @file graph_test_utils.h
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Vladimir Meciar (xmecia00)
  * @brief This file contains declaration of ADT node and interface functions
+ * @changes 7.12.2022
+ *
  * @note Functions do not check for NULL ptr being passed
  */
+#ifndef IAL22_NODE_H
+#define IAL22_NODE_H
 
 #include "vector.h"
 

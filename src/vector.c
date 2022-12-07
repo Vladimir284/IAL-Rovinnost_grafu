@@ -1,13 +1,12 @@
-//
-// Created by vladimir on 11/19/22.
-//
-
-#include "../inc/vector.h"
-
 /**
  * @file vector.c
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Vladimir Meciar (xmecia00)
  * @brief This file implements ADT vector and all it's interface functions
+ * @changes 7.12.2022
  */
+
+#include "../inc/vector.h"
 
 #define VECTOR_START_LENGTH 10
 

@@ -1,16 +1,16 @@
-//
-// Created by vladimir on 11/19/22.
-//
+/**
+ * @file vector.h
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Vladimir Meciar (xmecia00)
+ * @brief This file contains declaration of ADT vector and interface functions
+ *        ADT vector is basically growing and shrinking array
+ * @changes 7.12.2022
+ *
+ *  * @note Functions do not check for NULL ptr being passed
+ */
 
 #ifndef IAL22_VECTOR_H
 #define IAL22_VECTOR_H
-
-/**
- * @file vector.h
- * @brief This file contains declaration of ADT vector and interface functions
- *        ADT vector is basically growing and shrinking array
- * @note Functions do not check for NULL ptr being passed
- */
 
 #include <stdbool.h>
 #include <stdlib.h>

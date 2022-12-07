@@ -1,6 +1,11 @@
-//
-// Created by vladimir on 11/21/22.
-//
+/**
+ * @file graph_test.c
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Vladimir Meciar (xmecia00)
+ * @brief This file implements tests for data structure graph and its interface functions graph.c
+ * @changes 7.12.2022
+ */
+
 #include "../inc/graph_test.h"
 
 

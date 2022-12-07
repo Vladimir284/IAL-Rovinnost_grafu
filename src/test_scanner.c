@@ -1,6 +1,10 @@
-//
-// Created by vladimir on 12/1/22.
-//
+/**
+ * @file test_scanner.c
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Rastislav Mazur (xmazur09)
+ * @brief This file implements test for file scanner.c
+ * @changes 7.12.2022
+ */
 
 #include "../inc/test_scanner.h"
 

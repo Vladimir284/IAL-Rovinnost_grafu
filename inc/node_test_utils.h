@@ -1,7 +1,10 @@
-//
-// Created by vladimir on 11/21/22.
-//
-
+/**
+ * @file node_test_utils.h
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Vladimir Meciar (xmecia00)
+ * @brief This file contains  functions and macros needed for node_test.c
+ * @changes 7.12.2022
+ */
 #ifndef IAL22_NODE_TEST_UTILS_H
 #define IAL22_NODE_TEST_UTILS_H
 

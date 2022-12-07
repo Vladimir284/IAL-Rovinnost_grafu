@@ -1,3 +1,9 @@
+<!-- @file Readme.md -->
+<!-- @project IAL Náhradní projekt - 05. Rovinnost grafu -->
+<!-- @author Vladimir Meciar (xlogin00) -->
+<!-- @brief Readme of project -->
+<!-- @changes 7.12.2022 -->
+
 # IAL-Rovinnost_grafu
 Školní týmový projekt do IAL
 

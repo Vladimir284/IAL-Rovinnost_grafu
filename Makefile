@@ -1,3 +1,8 @@
+# Makefile
+# IAL Náhradní projekt - 05. Rovinnost grafu
+# Vladimir Meciar (xmecia00)
+# Subor na spustanie cielov pomocou make
+# Naposledy upravene 7.12.2022
 TARGET := ial22
 SOURCES := $(wildcard src/*.c)
 OBJECTS := $(patsubst src%,obj%, $(patsubst %.c,%.o, $(SOURCES)))
@@ -18,6 +23,9 @@ all: clean codeBuild
 docBuild:
 	latexmk -pdf doc/documentary.tex
 
+openDoc:
+	evince documentary.pdf
+
 docClean:
 	rm -f documentary.aux
 	rm -f documentary.fdb_latexmk
@@ -30,7 +38,7 @@ docClean:
 	rm -f doc/*.aux
 	rm -f doc/modules/*.aux
 
-doc: docBuild docClean
+doc: docBuild docClean openDoc
 
 codeBuild: $(OBJECTS)
 	$(CC) $(CCFLAGS) $(INCLUDE) $(OBJECTS) -o $(TARGET) $(LIBPATH) $(LIBS)

@@ -1,15 +1,15 @@
-//
-// Created by vladimir on 11/19/22.
-//
+/**
+ * @file graph.h
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Vladimir Meciar (xmecia00)
+ * @brief This file contains interface functions for graph. Graph is basically vector
+ * @changes 7.12.2022
+ *
+ * @note Functions do not check for NULL ptr being passed
+ */
 
 #ifndef IAL22_GRAPH_H
 #define IAL22_GRAPH_H
-
-/**
- * @file graph.h
- * @brief This file contains interface functions for graph. Graph is basically vector
- * @note Functions do not check for NULL ptr being passed
- */
 
 #include "node.h"
 

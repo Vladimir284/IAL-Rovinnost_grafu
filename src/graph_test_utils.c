@@ -1,6 +1,10 @@
-//
-// Created by vladimir on 11/20/22.
-//
+/**
+ * @file graph_test_utils.c
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Vladimir Meciar (xmecia00)
+ * @brief This file implements help functions for graph_test.c
+ * @changes 7.12.2022
+ */
 
 #include "../inc/graph_test_utils.h"
 

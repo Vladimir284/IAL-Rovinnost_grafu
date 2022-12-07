@@ -1,6 +1,11 @@
-//
-// Created by vladimir on 11/21/22.
-//
+/**
+ * @file node_test.c
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Vladimir Meciar (xmecia00)
+ * @brief This file implements test for data structure node (node.c)
+ * @changes 7.12.2022
+ */
+
 #include "../inc/node_test.h"
 
 ////// Test cases
