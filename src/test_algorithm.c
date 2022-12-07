@@ -116,7 +116,7 @@ void fill_graph(Vector *graph){
     //Node_Add_Edge(node, Init(8));
     //Node_Add_Edge(node, Init(9));
     //Node_Add_Edge(node, Init(10));
-    Graph_Add_Node(graph, node);
+    //Graph_Add_Node(graph, node);
 }
 //konec části pro smazání
 
