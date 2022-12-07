@@ -9,7 +9,7 @@
 
 ## Zadání
 - [Online](https://www.vut.cz/studis/student.phtml?sn=zadani_detail&apid=230956&zid=50673)
-- [Offline](http://localhost:63342/ial22/zadani.html?_ijt=rt8a34no35af7e7s5hpd88b765&_ij_reload=RELOAD_ON_SAVE)
+- [Ofline v dokumentacii](documentary.pdf)
 
 ## Termíny
 | Deadline            | Event     |
@@ -26,11 +26,8 @@
 ### Spuštení programu
 `make run ARGS="Nazov_Dokumentu""`
 
-### Spuštení programu se všema grafama
-`make ...` TODO Discus
-
-### Spuštení testů na strukturu
-`make test_structure`
+### Spuštení testů
+`make test_test`
 
 ### Genrování dokumentace
 `make doc`
