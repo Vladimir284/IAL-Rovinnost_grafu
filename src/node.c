@@ -1,14 +1,12 @@
-//
-// Created by vladimir on 11/19/22.
-//
-
-#include "../inc/node.h"
-
 /**
  * @file node.c
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Vladimir Meciar (xmecia00)
  * @brief This file implements ADT node and all it's interface functions
+ * @changes 07.12.2022
  */
 
+#include "../inc/node.h"
 
 // Structure of node
 struct Node_t {
