@@ -1,3 +1,11 @@
+/**
+ * @file scanner.c
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Ondřej Podroužek (xpodro03)
+ * @brief This file reads graph file from stdin in percise format and writes it in given Vector structure.
+ * @changes 7.12.2022
+ */
+
 #include "../inc/scanner.h"
 
 #define SCANNERERROR(PARAM) fprintf(stderr,"ERROR, %s\n",PARAM); Graph_Destroy(graf); return false;

@@ -8,11 +8,6 @@
 
 #include "../inc/graph_test.h"
 
-
-#define VIEW_INDICES(GRAPH) \
-        for (int i = 0; i < Graph_Get_Size(GRAPH); i++) \
-        printf("Index:%d, NodeId:%d\n",i,Node_Get_Id(Graph_Get_Node(GRAPH,i)));
-
 ////// Test cases
 /// Base data
 const int base_nodes_id[] = {1, 2, 3, 4, 5};

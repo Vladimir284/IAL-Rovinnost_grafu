@@ -2,7 +2,7 @@
  * @file graph.c
  * @project IAL Náhradní projekt - 05. Rovinnost grafu
  * @author Vladimir Meciar (xmecia00)
- * @brief This file implements  interface functions working with graph
+ * @brief This file implements interface functions working with graph
  * @changes 7.12.2022
  */
 

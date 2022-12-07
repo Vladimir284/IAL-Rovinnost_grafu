@@ -1,6 +1,10 @@
-//
-// Created by vladimir on 11/23/22.
-//
+/**
+ * @file main.c
+ * @project IAL Náhradní projekt - 05. Rovinnost grafu
+ * @author Vladimir Meciar (xmecia00)
+ * @brief Main file that starts whole process
+ * @changes 07.12.2022
+ */
 
 #include "../inc/node_test.h"
 #include "../inc/graph_test.h"
