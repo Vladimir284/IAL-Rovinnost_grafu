@@ -5,20 +5,25 @@
 % @changes 7.12.2022
 \section{Finalna logika}
 
+Na testovanie rovinnosti existuje niekolko podmienok.
+Zial vacsina z nich je len postacujuca, nie nutna.
+Jedine co zostalo pouzit je Kuratowskeho teorem. Jeho riesenie spociva v tom ze sa snazime v grafe najst podgraf grafov
+\ref{fig:graph-k5} a \ref{fig:graph-k33}. Zial, nevyhoda tohoto algoritmu je neefektivita. Musime porovnat vela uzlov medzi sebou
+
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{doc/fig/K5.png}
         \caption{Graf $K_5$}
-        \label{fig:graph_k5}
+        \label{fig:graph-k5}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.3\textwidth}
         \centering
         \includegraphics[width=\textwidth]{doc/fig/K33.png}
         \caption{Graf $K_{3,3}$}
-        \label{fig:graph_k3,3}
+        \label{fig:graph-k33}
     \end{subfigure}
     \caption{Nelinearne grafy}
     \label{fig:non_planar_graphs}
