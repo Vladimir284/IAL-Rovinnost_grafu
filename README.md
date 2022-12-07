@@ -24,7 +24,7 @@
  
 
 ### Spuštení programu
-`make run ARGS="Nazov_Dokumentu""`
+`make run ARGS="Nazev_Dokumentu""`
 
 ### Spuštení testů
 `make test`
