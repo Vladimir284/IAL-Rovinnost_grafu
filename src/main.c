@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
             Test_Graph();
         else if (strcmp("scanner",argv[1]) == 0)
             Test_Scanner();
-        else if (strcmp("algorithm", argv[1] == 0))
+        else if (strcmp("algorithm", argv[1]) == 0)
             test_algorithm();
         return 0;
     }
