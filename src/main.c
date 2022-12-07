@@ -9,6 +9,7 @@
 #include "../inc/node_test.h"
 #include "../inc/graph_test.h"
 #include "../inc/test_scanner.h"
+#include "../inc/test_algorithm.h"
 
 #define TEST 1
 
@@ -25,6 +26,8 @@ int main(int argc, char *argv[]) {
             Test_Graph();
         else if (strcmp("scanner",argv[1]) == 0)
             Test_Scanner();
+        else if (strcmp("algorithm", argv[1] == 0))
+            test_algorithm();
         return 0;
     }
 }
