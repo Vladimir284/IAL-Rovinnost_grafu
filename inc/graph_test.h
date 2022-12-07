@@ -2,7 +2,7 @@
  * @file graph_test.h
  * @project IAL Náhradní projekt - 05. Rovinnost grafu
  * @author Vladimir Meciar (xmecia00)
- * @brief This file contains  functions and macros needed for graph test in main
+ * @brief This file contains functions and macros needed for graph test in main
  * @changes 7.12.2022
  */
 
