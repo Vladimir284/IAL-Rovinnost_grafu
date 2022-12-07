@@ -52,8 +52,11 @@ clean: docClean
 	mkdir obj
 
 # Execute with arguments: make run ARGS="some arguments"
-run: $(TARGET)
-	./$(TARGET) $(ARGS)
+run: all
+	./$(TARGET) <input/graph_.graph
+
+runAll: all
+	./input/graph_load.sh
 
 test: test_structure test_scanner
 
@@ -75,5 +78,19 @@ test_graph_structure: all
 test_scanner: all
 	./test/scanner_test.sh
 
-pack:
-	# TBD
+test_graph: all
+	./test/graph_test.sh
+
+pack: clean
+	mkdir xmazur09
+	cp -r doc xmazur09
+	cp -r inc xmazur09
+	cp -r input xmazur09
+	cp -r src xmazur09
+	cp -r test xmazur09
+	cp documentary.pdf xmazur09
+	cp README.md xmazur09
+	cp Makefile xmazur09
+	zip -r xmazur09.zip xmazur09
+	rm xmazur09
+
