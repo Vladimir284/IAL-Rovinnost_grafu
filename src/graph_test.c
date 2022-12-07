@@ -6,11 +6,7 @@
  * @changes 07.12.2022
  */
 
-//
-// Created by vladimir on 11/21/22.
-//
 #include "../inc/graph_test.h"
-
 
 #define VIEW_INDICES(GRAPH) \
         for (int i = 0; i < Graph_Get_Size(GRAPH); i++) \
