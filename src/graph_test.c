@@ -1,5 +1,5 @@
 /**
- * @file graph.c
+ * @file graph_test.c
  * @project IAL Náhradní projekt - 05. Rovinnost grafu
  * @author Vladimir Meciar (xmecia00)
  * @brief TODO
