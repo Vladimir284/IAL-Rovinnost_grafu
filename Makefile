@@ -23,8 +23,6 @@ all: clean codeBuild
 docBuild:
 	latexmk -pdf doc/documentary.tex
 
-openDoc:
-	evince documentary.pdf
 
 docClean:
 	rm -f documentary.aux
@@ -38,7 +36,7 @@ docClean:
 	rm -f doc/*.aux
 	rm -f doc/modules/*.aux
 
-doc: docBuild docClean openDoc
+doc: docBuild docClean
 
 codeBuild: $(OBJECTS)
 	$(CC) $(CCFLAGS) $(INCLUDE) $(OBJECTS) -o $(TARGET) $(LIBPATH) $(LIBS)
@@ -53,10 +51,24 @@ clean: docClean
 
 # Execute with arguments: make run ARGS="some arguments"
 run: all
-	./$(TARGET) <input/graph_.graph
+	./ial22 <input/graph_16_cell.graph
+	./ial22 <input/graph_antenna.graph
+	./ial22 <input/graph_Chvatal.graph
+	./ial22 <input/graph_antiprism.graph
+	./ial22 <input/graph_Franklin.graph
+	./ial22 <input/graph_GoddardHenning.graph
+	./ial22 <input/graph_Grotzsch.graph
+	./ial22 <input/graph_Heawood.graph
+	./ial22 <input/graph_K3,3.graph
+	./ial22 <input/graph_K5.graph
+	./ial22 <input/graph_Lemke.graph
+	./ial22 <input/graph_Petersen.graph
+	./ial22 <input/graph_sun.graph
+	./ial22 <input/graph_Tilley.graph
+	./ial22 <input/graph_cross.graph
 
 runAll: all
-	./input/graph_load.sh
+
 
 test: test_structure test_scanner
 
