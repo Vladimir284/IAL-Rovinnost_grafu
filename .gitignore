@@ -53,3 +53,9 @@ dkms.conf
 
 # Jetbrains
 .idea
+CMakeLists.txt
+cmake-build-debug
+CMakeLists.txt
+
+# Output
+ial22

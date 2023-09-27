@@ -1,0 +1,131 @@
+           Graph tests
+-----------------------------------
+
+
+[Test_Init_Graph] Init empty graph
+
+Graph length: 0
+Graph nodes: [  ]
+
+[Test_Add_Base_Nodes] Add base nodes to graph
+
+Graph length: 0
+Graph nodes: [  ]
+
+Graph length: 5
+Graph nodes: [ 1, 2, 3, 4, 5 ]
+
+[Test_Graph_Remove_Nodes_Last] Remove last 3 nodes from graph
+
+Graph length: 0
+Graph nodes: [  ]
+
+Graph length: 5
+Graph nodes: [ 1, 2, 3, 4, 5 ]
+
+Graph length: 2
+Graph nodes: [ 1, 2 ]
+
+[Test_Graph_Remove_Nodes_First] Remove first 3 nodes from graph
+
+Graph length: 0
+Graph nodes: [  ]
+
+Graph length: 5
+Graph nodes: [ 1, 2, 3, 4, 5 ]
+
+Graph length: 2
+Graph nodes: [ 4, 5 ]
+
+[Test_Graph_Add_Additional_Nodes] Add base and additional nodes to graph
+
+Graph length: 0
+Graph nodes: [  ]
+
+Graph length: 15
+Graph nodes: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+
+
+[Test_Graph_Remove_Additional_Nodes_First] Remove first 8 nodes from graph with base and additional nodes
+
+Graph length: 0
+Graph nodes: [  ]
+
+Graph length: 15
+Graph nodes: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+
+Graph length: 7
+Graph nodes: [ 9, 10, 11, 12, 13, 14, 15 ]
+
+[Test_Graph_Remove_Additional_Nodes_Last] Remove last 8 nodes from graph with base and additional nodes
+
+Graph length: 0
+Graph nodes: [  ]
+
+Graph length: 15
+Graph nodes: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+
+Graph length: 8
+Graph nodes: [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+
+[Test_Graph_Search_Additional_Node] Search every second node in graph with base and additional edges
+
+Graph length: 0
+Graph nodes: [  ]
+
+Graph length: 15
+Graph nodes: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+
+Node 2 found
+Node 4 found
+Node 6 found
+Node 8 found
+Node 10 found
+Node 12 found
+Node 14 found
+
+[Test_Graph_Search_Empty_Graph_Additional_Nodes] Search every second node in empty graph
+
+Graph length: 0
+Graph nodes: [  ]
+
+Node 2 not found
+Node 4 not found
+Node 6 not found
+Node 8 not found
+Node 10 not found
+Node 12 not found
+Node 14 not found
+
+[Test_Graph_Get_Node_On_Index] Get every single node of graph
+
+Graph length: 0
+Graph nodes: [  ]
+
+Node on index 1: 1
+Node on index 2: 2
+Node on index 3: 3
+Node on index 4: 4
+Node on index 5: 5
+Node on index 6: 6
+Node on index 7: 7
+Node on index 8: 8
+Node on index 9: 9
+Node on index 10: 10
+Node on index 11: 11
+Node on index 12: 12
+Node on index 13: 13
+Node on index 14: 14
+Node on index 15: 15
+
+[Test_Graph_Clear_Additional_Node] Clear graph with base and additional nodes
+
+Graph length: 0
+Graph nodes: [  ]
+
+Graph length: 15
+Graph nodes: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+
+Graph length: 0
+Graph nodes: [  ]
+
